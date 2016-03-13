@@ -1,0 +1,15 @@
+{
+  "name": "bones-redux",
+  "version": "1.0.0",
+  "description": "wp bones theme, modified for gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jon Richards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jon-r/arcane-theme/issues"
+  },
+  "homepage": "https://github.com/jon-r/arcane-theme#readme"
+}
