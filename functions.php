@@ -51,7 +51,7 @@ function bones_ahoy() {
   bones_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'bones_register_sidebars' );
+  //add_action( 'widgets_init', 'bones_register_sidebars' );
 
   // cleaning up random code around images
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
@@ -242,6 +242,9 @@ function bones_fonts() {
   wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
 }
 
-add_action('wp_enqueue_scripts', 'bones_fonts');
+//add_action('wp_enqueue_scripts', 'bones_fonts');
+
+//jr custom extras. added separately to not get mixed up
+require_once('library/functions-jr.php');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

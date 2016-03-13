@@ -1,81 +1,39 @@
-/*!
- * gulp
- * $ npm install gulp-ruby-sass gulp-autoprefixer gulp-cssnano gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache del --save-dev
- */
 
-// Load plugins
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cssnano = require('gulp-cssnano'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    livereload = require('gulp-livereload'),
-    del = require('del');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var uglify = require('gulp-uglify');
+var rename = require("gulp-rename");
+var cssnano = require('gulp-cssnano');
 
-// Styles
-gulp.task('styles', function() {
-  return sass('dev/scss/main.scss', { style: 'expanded' })
-    .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest('library/styles'))
-    .pipe(rename({ suffix: '.min' }))
+gulp.task('sass', function() {
+  return gulp.src('library/scss/style.scss')
+    .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+    .pipe(prefix("last 2 version", "> 2%"))
+    .pipe(gulp.dest('library/css'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())
-    .pipe(gulp.dest('library/styles'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulp.dest('library/css'));
 });
 
-// Scripts
-gulp.task('scripts', function() {
-  return gulp.src('dev/js/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('library/scripts'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
-    .pipe(gulp.dest('library/scripts'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+//gulp.task('sass-min', function() {
+//  return gulp.src('./library/scss/style.scss')
+//    .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
+//    .pipe(prefix("last 2 version", "> 2%"))
+//    .pipe(rename('style.min.css'))
+//    .pipe(gulp.dest('./library/css'));
+//});
+
+gulp.task('minjs', function() {
+  return gulp.src('./library/js/scripts.js')
+    .pipe(uglify({preserveComments: 'some'}))
+    .pipe(rename('scripts.min.js'))
+    .pipe(gulp.dest('./library/js'));
 });
 
-// Images
-gulp.task('images', function() {
-  return gulp.src('dev/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('library/images'))
-    .pipe(notify({ message: 'Images task complete' }));
-});
+gulp.task('default', ['sass','minjs']);
 
-// Clean
-gulp.task('clean', function() {
-  return del(['library/styles', 'library/scripts', 'library/images']);
-});
-
-// Default task
-gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images');
-});
-
-// Watch
-gulp.task('watch', function() {
-
-  // Watch .scss files
-  gulp.watch('dev/styles/**/*.scss', ['styles']);
-
-  // Watch .js files
-  gulp.watch('dev/scripts/**/*.js', ['scripts']);
-
-  // Watch image files
-  gulp.watch('dev/images/**/*', ['images']);
-
-  // Create LiveReload server
-  livereload.listen();
-
-  // Watch any files in library/, reload on change
-  gulp.watch(['library/**']).on('change', livereload.changed);
-
+gulp.task('watch', function () {
+  gulp.watch('./library/scss/**/*.scss', ['sass']);
+  gulp.watch('./library/js/scripts.js', ['minjs']);
 });

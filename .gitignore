@@ -58,3 +58,4 @@ temp/
 *.scssc
 
 /node_modules/
+/library/scss/.old/

@@ -1,0 +1,28 @@
+//*media query setup-------------------------------------------------------------------*/
+
+/*//base size (min);
+$break-xs: 320px;
+//tablet
+$break-s: 481px;
+//screen
+$break-m: 1030px;
+//hd screen
+$break-l: 1240px;*/
+
+@mixin jr-size($media) {
+  @if $media == phoneOnly {
+    @media only screen and (max-width: $tablet) { @content; }
+  }
+  @if $media == tablet {
+    @media only screen and (min-width: $tablet + 1) { @content; }
+  }
+  @if $media == tabletOnly {
+    @media only screen and (min-width: $tablet + 1) and (max-width: $desktop) { @content; }
+  }
+  @else if $media == screen {
+    @media only screen and (min-width: $desktop + 1) { @content; }
+  }
+  @else if $media == screen-hd {
+    @media only screen and (min-width: $widescreen) { @content; }
+  }
+}

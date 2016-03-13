@@ -1,0 +1,17 @@
+//import bulma framework from node filepath
+@import "../../node_modules/bulma/bulma.sass";
+
+//scss things
+@import "scss-utils/variables";
+@import "scss-utils/scss-mixins";
+
+//general layout options
+@import "global/general-template";
+@import "global/type";
+
+//page template
+@import "page-templates/header";
+@import "page-templates/menu";
+@import "page-templates/location";
+@import "page-templates/blog-archive";
+@import "page-templates/footer";

@@ -1,5 +1,5 @@
 {
-  "name": "bones-redux",
+  "name": "arcane-theme",
   "version": "1.0.0",
   "description": "wp bones theme, modified for gulp",
   "main": "index.js",
@@ -11,5 +11,14 @@
   "bugs": {
     "url": "https://github.com/jon-r/arcane-theme/issues"
   },
-  "homepage": "https://github.com/jon-r/arcane-theme#readme"
+  "homepage": "https://github.com/jon-r/arcane-theme#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "bulma": "0.0.16",
+    "gulp-cssnano": "^2.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jon-r/arcane-theme.git"
+  }
 }
