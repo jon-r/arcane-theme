@@ -114,7 +114,28 @@ jQuery(document).ready(function($) {
    * Let's fire off the gravatar function
    * You can remove this if you don't need it
   */
-  loadGravatars();
+  //loadGravatars();
+
+
 
 
 }); /* end of as page load scripts */
+
+
+//menu tabs
+var foodMenu = document.getElementById('js_menuButtons');
+
+if (foodMenu) {
+  foodtabs = foodMenu.getElementsByClassName('tab-food-menu'),
+  foodsections = foodMenu.getElementsByClassName('section-food-menu'),
+  menuCount = foodtabs.length;
+}
+
+function goTab(n) {
+  for (i=0;i<menuCount;i++) {
+    foodtabs[i].classList.remove('is-active');
+    foodsections[i].classList.remove('is-active');
+  }
+  foodtabs[n].classList.add('is-active');
+  foodsections[n].classList.add('is-active');
+}

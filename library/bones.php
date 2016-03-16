@@ -154,7 +154,7 @@ function bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
         wp_deregister_script( 'jquery' );
-        wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js' ), false, '2.2.0', true );
+        wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js' ), false, '2.2.0', false );
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bones-js' );
 

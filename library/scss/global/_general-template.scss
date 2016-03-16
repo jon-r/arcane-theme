@@ -2,9 +2,15 @@ body {
   font-family: "Times New Roman", Times, serif;
   background: $arc-yellow;
   color: $arc-green;
+  font-size: 16px;
 }
 
 .title-bar {
   background: $arc-green;
   color: $arc-yellow;
+  text-align: center;
+}
+
+.container {
+  padding: 1rem;
 }

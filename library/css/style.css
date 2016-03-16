@@ -1673,8 +1673,24 @@ $break-s: 481px;
 $break-m: 1030px;
 //hd screen
 $break-l: 1240px;*/
-body { font-family: "Times New Roman", Times, serif; background: #DDAB0F; color: #393E11; }
+body { font-family: "Times New Roman", Times, serif; background: #DDAB0F; color: #393E11; font-size: 16px; }
 
-.title-bar { background: #393E11; color: #DDAB0F; }
+.title-bar { background: #393E11; color: #DDAB0F; text-align: center; }
+
+.container { padding: 1rem; }
+
+h1, h2, h3, h4 { text-transform: uppercase; }
+
+h1 { font-size: 2.8em; }
+
+h2 { font-size: 2em; }
+
+h3 { font-size: 1.4em; }
+
+h4 { font-size: 1em; }
 
 .header-splash { background: url("../images/arc-leather-book-holding-page.jpg") center/cover; }
+
+.section-food-menu { display: none; }
+
+.section-food-menu.is-active { display: block; }

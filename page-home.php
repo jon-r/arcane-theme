@@ -15,17 +15,15 @@
 
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-          <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+          <article id="post-<?php the_ID(); ?>" <?php post_class( ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-            <header class="article-header">
+            <div class="container">
 
-              <h1 class="page-title"><?php the_title(); ?></h1>
+              <section class="entry-content" itemprop="articleBody">
+                <?php the_content(); ?>
+              </section>
 
-            </header>
-
-            <section class="entry-content cf" itemprop="articleBody">
-              <?php the_content(); ?>
-            </section>
+            </div>
 
 
             <footer class="article-footer">
@@ -54,30 +52,24 @@
             </footer>
           </article>
 
-          <?php endif; ?>
+          <?php endif;
+
+          //menu tabs
+          include(locate_template('includes/template-menu.php'));
+          //location + contact form
+          include(locate_template('includes/template-location.php'));
+          //blog section
+          include(locate_template('includes/template-blog.php'));
 
 
-          <article id="menu" >
-            <header class="article-header">
-              <h1>Menu</h1>
-            </header>
-          </article>
 
-          <article id="location" >
-            <header class="article-header">
-              <h1>Location</h1>
-            </header>
-          </article>
+          ?>
 
-          <article id="blog" >
-            <header class="article-header">
-              <h1>blog</h1>
-            </header>
-          </article>
+
+
 
         </main>
 
-        <?php // get_sidebar(); ?>
 
       </div>
 
