@@ -1,14 +1,12 @@
-<article id="location" class="arcane-location" >
+<article id="location" >
   <header class="article-header title-bar">
-    <h2 class="title is-2">Location</h2>
+    <h5 class="title is-5">Location</h5>
   </header>
 
-  <div class="columns">
 
-    <section class="column section-map">
+    <section class="section-map">
       <?php echo do_shortcode('[wpgmza id="1"]'); ?>
     </section>
 
-  </div>
 
 </article>

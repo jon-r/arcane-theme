@@ -123,19 +123,48 @@ jQuery(document).ready(function($) {
 
 
 //menu tabs
-var foodMenu = document.getElementById('js_menuButtons');
+var foodMenu = document.getElementById('js_menu');
 
 if (foodMenu) {
-  foodtabs = foodMenu.getElementsByClassName('tab-food-menu'),
-  foodsections = foodMenu.getElementsByClassName('section-food-menu'),
-  menuCount = foodtabs.length;
+  var  foodtabs = foodMenu.getElementsByClassName('tab-food-menu'),
+    foodsections = foodMenu.getElementsByClassName('section-food-menu'),
+    menuCount = foodtabs.length;
+
+  function goTab(n) {
+
+    console.log(foodMenu);
+
+    for (i=0;i<menuCount;i++) {
+      foodtabs[i].classList.remove('is-active');
+      foodsections[i].classList.remove('is-active');
+    }
+    foodtabs[n].classList.add('is-active');
+    foodsections[n].classList.add('is-active');
+  }
 }
 
-function goTab(n) {
-  for (i=0;i<menuCount;i++) {
-    foodtabs[i].classList.remove('is-active');
-    foodsections[i].classList.remove('is-active');
-  }
-  foodtabs[n].classList.add('is-active');
-  foodsections[n].classList.add('is-active');
+////header-toggle
+var headToggle = document.getElementById('header-toggle');
+
+if (headToggle) {
+  headToggle.onclick = function() {
+    headToggle.classList.toggle('is-active');
+    headToggle.nextElementSibling.classList.toggle('is-active');
+  };
 }
+
+//https://css-tricks.com/snippets/jquery/smooth-scrolling/
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});

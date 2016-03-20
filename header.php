@@ -41,7 +41,7 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-
+<?php if (is_front_page()) : ?>
 <header class="hero header-splash is-fullheight">
   <div class="hero-content">
     <div class="container">
@@ -51,7 +51,7 @@
 
   <div class="hero-footer title-bar">
     <div class="container">
-      <nav role="navigation" class="header-menu tabs is-fullwidth  has-frame" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <nav role="navigation" class="header-menu tabs is-centered has-frame" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <?php wp_nav_menu([
          'container' => false,                           // remove nav container
          'container_class' => '',                 // class of container (should you choose to use it)
@@ -70,3 +70,53 @@
     </div>
   </div>
 </header>
+<?php else : ?>
+
+<header class="header title-bar">
+  <div class="container">
+    <div class="header-left">
+      <a class="header-item" href="<?php echo home_url() ?>">
+        <img class="" src="<?php echo get_template_directory_uri().'/library/images/arcanelogo1.png' ?>" />
+      </a>
+    </div>
+
+  <span id="header-toggle" class="header-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <!-- Right side -->
+<!--  <div class="header-right header-menu">
+    <span class="header-item">
+      <a href="#">Nav item</a>
+    </span>
+    <span class="header-item">
+      <a href="#">Other nav item</a>
+    </span>
+    <span class="header-item">
+      <a class="button" href="#">Button</a>
+    </span>
+    </div>-->
+
+    <?php wp_nav_menu([
+     'container' => false,                           // remove nav container
+     'container_class' => '',                 // class of container (should you choose to use it)
+     'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+     'menu_class' => 'header-right header-menu',               // adding custom nav class
+     'theme_location' => 'main-nav',                 // where it's located in the theme
+     'before' => '',                                 // before the menu
+     'after' => '',                                  // after the menu
+     'link_before' => '<span class="header-item">',    // before each link
+     'link_after' => '</span>',                             // after each link
+     'depth' => 0,                                   // limit the depth of the nav
+     'fallback_cb' => ''                             // fallback function (if there is one)
+    ]); ?>
+
+<!--  </div>-->
+    </div>
+
+</header>
+
+  <?php endif ?>
+

@@ -1,16 +1,69 @@
-.blog-frame,
-.mail-subscription-form {
-  max-width: 512px;
-  display: inline-block;
-  padding: 1rem;
+.article-inner.is-blog {
+
 }
 
-.blog-frame {
-  border-bottom: solid 2px;
+.blog-frame, .contact-frame,
+.mail-subscription-form {
+  width:calc(100% - 5rem);
+  max-width: 600px;
+  display: inline-block;
+}
+
+.blog-frame, .contact-frame {
+  border-style: double;
+  border-width: 5px 0;
+  margin: 2rem
 }
 
 .mail-subscription-form  {
   .is-medium {
     border: solid 2px $arc-red;
   }
+  .button {
+    background: $arc-red;
+    color: $arc-yellow;
+  }
+}
+
+.post-frame {
+  margin: 0 0 1rem;
+  display: flex;
+}
+.blog-frame .post-thumb {
+  max-width:50%;
+}
+.wp-post-image {
+  height:auto;
+}
+
+.post-content {
+  text-align: left;
+  margin-left: 1rem;
+  flex: 1;
+  .subtitle {
+    border-bottom: 1px solid;
+  }
+}
+
+.sidebar {
+  .post-frame {
+    flex-direction: column;
+    align-items: center;
+  }
+  .post-content {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+  }
+  .post-thumb {
+    max-width:100%;
+  }
+}
+
+.contact-content {
+  padding: 1rem;
+}
+
+.contact-content:not(:last-of-type) {
+  border-bottom: 1px solid;
 }

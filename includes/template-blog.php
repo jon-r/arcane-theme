@@ -1,57 +1,97 @@
-<article id="blog" class="arcane-blog" >
+<?php
+   $args = array('post_type' => 'post','posts_per_page'=>4);
+   $blogPosts = new WP_Query($args);
+?>
+
+
+
+<article id="blog" >
   <header class="article-header title-bar">
-    <h2 class="title is-2">Contact</h2>
+    <h5 class="title is-5">Contact</h5>
   </header>
 
-  <div class="columns is-text-centered has-frame">
+  <div class="article-inner is-blog">
 
-    <section class="column">
+    <div class="columns is-text-centered has-frame">
 
-      <div class="blog-frame">
-        <img src="<?php echo get_template_directory_uri().'/library/images/arcanelogo2.png' ?>" />
-        <h4><a href="#" >Click Here</a> to read more</h4>
-      </div>
+      <section class="column">
+
+        <div class="blog-frame">
+          <img src="<?php echo get_template_directory_uri().'/library/images/arcanelogo2.png' ?>" />
 
 
-      <h4>Subscribe to our newsletter</h4>
+      <?php  if($blogPosts->have_posts()) : while($blogPosts->have_posts()) :  $blogPosts->the_post();?>
 
-      <form class="mail-subscription-form" >
+        <?php include(locate_template('includes/template-post.php')); ?>
 
-        <p class="control is-grouped">
-          <input class="input is-medium" type="email" placeholder="Your Email Address">
-          <button class="button is-medium" >Submit</button>
-        </p>
+      <?php endwhile; else: ?>
 
-      </form>
+      Oops, there are no posts.
 
-    </section>
+      <?php endif; ?>
 
-    <section class="column">
-      <h4 class="title is-4">Arcane</h4>
-      <p>
-      2 South King Street <br />
-      Manchester <br />
-      M2 6EX <br />
-      Tel: 0151 709 1133
-      </p>
+        </div>
 
-      <h4 class="title is-4" >Email</h4>
-      <a href="#" >info@arcanebar.com</a>
-      <a href="#" >bookings@arcanebar.com</a>
-      <h4 class="title is-4" >Twitter</h4>
-      <a href="#" >@ArcaneBar</a>
-      <h4 class="title is-4" >Instagram</h4>
-      <a href="#" >@ArcaneBar</a>
-      <h4 class="title is-4" >Facebook</h4>
-      <a href="#" >ArcaneBar</a>
 
-      <h4 class="title is-4" >OPENING TIMES</h4>
-      <h6 class="subtitle is-6" >Sunday to Thursday</h6>
-      <span>11.00am - 1.00am</span>
-      <h6 class="subtitle is-6" >Friday &amp; Saturday</h6>
-      <span>11.00am - 4.00am</span>
+        <h5 class="title is-5">Subscribe to our newsletter</h5>
 
-    </section>
+        <form class="mail-subscription-form" >
+
+          <p class="control is-grouped">
+            <input class="input is-medium" type="email" placeholder="Your Email Address">
+            <button class="button is-medium" >Submit</button>
+          </p>
+
+        </form>
+
+      </section>
+
+      <section class="column">
+        <div class="contact-frame">
+
+          <article class="contact-content">
+            <h4 class="title is-4">Arcane</h4>
+            <p>
+              2 South King Street
+              <br /> Manchester
+              <br /> M2 6EX
+              <br /> Tel: 0151 709 1133
+            </p>
+          </article>
+
+          <article class="contact-content">
+            <h4 class="title is-4">Email</h4>
+            <a href="#">info@arcanebar.com</a><br />
+            <a href="#">bookings@arcanebar.com</a>
+          </article>
+
+          <article class="contact-content">
+            <h4 class="title is-4">Twitter</h4>
+            <a href="#">@ArcaneBar</a>
+          </article>
+
+          <article class="contact-content">
+            <h4 class="title is-4">Instagram</h4>
+            <a href="#">@ArcaneBar</a>
+          </article>
+
+          <article class="contact-content">
+            <h4 class="title is-4">Facebook</h4>
+            <a href="#">ArcaneBar</a>
+          </article>
+
+          <article class="contact-content">
+            <h4 class="title is-4">OPENING TIMES</h4>
+            <h6 class="subtitle is-6">Sunday to Thursday</h6>
+            <span>11.00am - 1.00am</span>
+            <h6 class="subtitle is-6">Friday &amp; Saturday</h6>
+            <span>11.00am - 4.00am</span>
+          </article>
+        </div>
+
+      </section>
+
+    </div>
 
   </div>
 

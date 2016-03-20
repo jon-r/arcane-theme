@@ -2,6 +2,8 @@ body {
   background: url(../images/paper_tile_yellow.jpg) center, $arc-yellow;
   color: $arc-red;
   font-size: 16px;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .title-bar {
@@ -10,7 +12,7 @@ body {
   text-align: center;
 
   .title {
-    color: $arc-yellow;
+    padding: 1rem;
   }
 }
 
@@ -25,15 +27,25 @@ body {
   }
 }
 
+@include jr-size('tablet') {
+  .has-frame {
+    li:nth-last-child(n+2) {
+      border-right: solid 2px;
+    }
+    .column:nth-last-child(n+2) {
+      border-right: double 5px;
+    }
 
-.container {
-  padding: 1rem;
-}
-
-.has-frame {
-  li:nth-last-child(n+2),
-  .column:nth-last-child(n+2) {
-    border-right: solid 2px;
   }
-
 }
+
+.article-inner {
+  margin: 2rem auto;
+  padding: 1rem 0.5rem;
+}
+
+/*.wp-post-image {
+  max-width: 100%;
+}*/
+
+

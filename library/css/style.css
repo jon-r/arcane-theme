@@ -1673,55 +1673,107 @@ $break-s: 481px;
 $break-m: 1030px;
 //hd screen
 $break-l: 1240px;*/
-body { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; color: #4c0f11; font-size: 16px; }
+body { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; color: #4c0f11; font-size: 16px; min-height: 100vh; overflow-x: hidden; }
 
 .title-bar { background: #4c0f11; color: #DDAB0F; text-align: center; }
 
-.title-bar .title { color: #DDAB0F; }
+.title-bar .title { padding: 1rem; }
 
 .tabs a { color: inherit; border: none; }
 
 .tabs a:hover, .tabs li.is-active a { color: inherit; text-decoration: underline; }
 
-.container { padding: 1rem; }
+@media only screen and (min-width: 770px) { .has-frame li:nth-last-child(n+2) { border-right: solid 2px; }
+  .has-frame .column:nth-last-child(n+2) { border-right: double 5px; } }
 
-.has-frame li:nth-last-child(n+2), .has-frame .column:nth-last-child(n+2) { border-right: solid 2px; }
+.article-inner { margin: 2rem auto; padding: 1rem 0.5rem; }
 
-@font-face { font-family: "Palatino Linotype"; src: url(../font/pala.ttf); font-weight: normal; font-style: normal; }
+/*.wp-post-image { max-width: 100%; }*/
+@font-face { font-family: "Futura"; src: url(../font/Futura-Medium.ttf); font-weight: normal; font-style: normal; }
 
-@font-face { font-family: "Palatino Linotype"; src: url(../font/palai.ttf); font-weight: normal; font-style: italic; }
+@font-face { font-family: "Futura"; src: url(../font/Futura-MediumItalic.ttf); font-weight: normal; font-style: italic; }
 
-@font-face { font-family: "Palatino Linotype"; src: url(../font/palab.ttf); font-weight: bold; font-style: normal; }
+@font-face { font-family: "Futura"; src: url(../font/Futura-CondensedExtraBold.ttf); font-weight: bold; font-style: normal; }
 
-@font-face { font-family: "Palatino Linotype"; src: url(../font/palabi.ttf); font-weight: bold; font-style: italic; }
+/*@font-face { font-family: "Futura"; src: url(../font/Futura-CondensedExtraBold.ttf); font-weight: bold; font-style: italic; }*/
+body, button, input, select, textarea, .title, .subtitle, a { font-family: "Futura", Helvetica, arial, sans-serif; }
 
-h1, h2, h3, h4, h5, h6 { font-family: "Palatino Linotype", Book Antiqua, Georgia, serif; text-transform: uppercase; }
+.title, .subtitle, a { color: inherit; }
 
-body, p, a { font-family: "Palatino Linotype", Book Antiqua, Georgia, serif; }
+.title, .subtitle, .tabs a { text-transform: uppercase; }
+
+a.is-pulled-right { margin-top: -15px; }
 
 /*h1 { font-size: 2.8em; } h2 { font-size: 2em; } h3 { font-size: 1.4em; } h4 { font-size: 1em; }*/
 .header-splash { background: url("../images/arc-leather-book-holding-page.jpg") center/cover; }
 
-.arcane-menu { min-height: 900px; background: url(../images/book.jpg) center 4rem/1100px no-repeat, url(../images/paper_tile.jpg) center; }
+.header-item img { max-height: 40px; }
 
-.arcane-menu .tabs ul { border: none; padding: 1rem; }
+.article-inner.is-intro { border-style: double; border-width: 5px 0; font-size: 1.5rem; }
 
-.arcane-menu > .container { padding-top: 4rem; }
+.header-toggle:hover { background: #370b0c; }
 
-.section-food-menu { display: none; -webkit-columns: 2 300px; -moz-columns: 2 300px; columns: 2 300px; -webkit-column-gap: 6rem; -moz-column-gap: 6rem; column-gap: 6rem; }
+.is-active.header-toggle span { background: #DDAB0F; }
+
+.hero.is-fullheight .tabs a { padding: 0; }
+
+.hero.is-fullheight .tabs li { margin: 15px 0; padding: 0 20px; }
+
+.menu-article { background: url(../images/paper_tile.jpg) center; padding-top: 2rem; }
+
+.menu-title { text-align: center; }
+
+.article-inner.is-menu { margin: 0; text-align: center; }
+
+.article-inner.is-menu .tabs ul { border: none; padding: 1rem; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+
+@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/book.jpg) center 2rem/1100px no-repeat; text-align: left; height: 875px; }
+  .article-inner.is-menu > .container { padding-top: 4rem; } }
+
+.section-food-menu { display: none; }
 
 .section-food-menu h2, .section-food-menu h3, .section-food-menu h4 { border-bottom: 1px solid; display: inline-block; }
 
 .section-food-menu p { padding-bottom: 2rem; }
 
+@media only screen and (min-width: 770px) { .section-food-menu { -webkit-columns: 2 300px; -moz-columns: 2 300px; columns: 2 300px; -webkit-column-gap: 6rem; -moz-column-gap: 6rem; column-gap: 6rem; } }
+
 .section-food-menu.is-active { display: block; }
 
-@media only screen and (max-width: 769px) { .gm-style { pointer-events: none; } }
+.gm-style { pointer-events: none; }
 
-.blog-frame, .mail-subscription-form { max-width: 512px; display: inline-block; padding: 1rem; }
+.section-map { height: 400px; }
 
-.blog-frame { border-bottom: solid 2px; }
+.blog-frame, .contact-frame, .mail-subscription-form { width: calc(100% - 5rem); max-width: 600px; display: inline-block; }
+
+.blog-frame, .contact-frame { border-style: double; border-width: 5px 0; margin: 2rem; }
 
 .mail-subscription-form .is-medium { border: solid 2px #4c0f11; }
 
+.mail-subscription-form .button { background: #4c0f11; color: #DDAB0F; }
+
+.post-frame { margin: 0 0 1rem; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+
+.blog-frame .post-thumb { max-width: 50%; }
+
+.wp-post-image { height: auto; }
+
+.post-content { text-align: left; margin-left: 1rem; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
+
+.post-content .subtitle { border-bottom: 1px solid; }
+
+.sidebar .post-frame { -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-align-items: center; -ms-flex-align: center; -ms-grid-row-align: center; align-items: center; }
+
+.sidebar .post-content { text-align: center; width: 100%; max-width: 300px; }
+
+.sidebar .post-thumb { max-width: 100%; }
+
+.contact-content { padding: 1rem; }
+
+.contact-content:not(:last-of-type) { border-bottom: 1px solid; }
+
 .footer { background: none; }
+
+.article-content { margin: 1rem 0; padding: 1rem 0; border: solid; border-width: 1px 0; }
+
+.is-single .wp-post-image { width: 100%; }

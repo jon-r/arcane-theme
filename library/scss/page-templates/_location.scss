@@ -1,7 +1,10 @@
-//mostly the map
+//maqking the map inactive until user has hovered for a while;
 
-@include jr-size(phoneOnly) {
-  .gm-style {
-    pointer-events: none;
-  }
+.gm-style {
+  pointer-events: none;
+}
+
+
+.section-map {
+  height:400px;
 }

@@ -1,39 +1,49 @@
 @font-face {
-  font-family: "Palatino Linotype";
-  src: url(../font/pala.ttf);
+  font-family: "Futura";
+  src: url(../font/Futura-Medium.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Palatino Linotype";
-  src: url(../font/palai.ttf);
+  font-family: "Futura";
+  src: url(../font/Futura-MediumItalic.ttf);
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
-  font-family: "Palatino Linotype";
-  src: url(../font/palab.ttf);
+  font-family: "Futura";
+  src: url(../font/Futura-CondensedExtraBold.ttf);
   font-weight: bold;
   font-style: normal;
 }
-@font-face {
-  font-family: "Palatino Linotype";
-  src: url(../font/palabi.ttf);
+/*@font-face {
+  font-family: "Futura";
+  src: url(../font/Futura-CondensedExtraBold.ttf);
   font-weight: bold;
   font-style: italic;
-}
+}*/
 
-$arc-font : "Palatino Linotype", Book Antiqua,Georgia,serif;
+$arc-font : "Futura", Helvetica, arial ,sans-serif;
 
 
-h1, h2, h3, h4, h5 ,h6 {
-//  font-weight: bold;
+body, button, input, select, textarea, .title, .subtitle, a {
   font-family: $arc-font;
+
+}
+
+.title, .subtitle, a {
+  color: inherit;
+}
+.title, .subtitle, .tabs a {
   text-transform: uppercase;
 }
-body, p, a {
-  font-family: $arc-font;
+
+a.is-pulled-right {
+  margin-top: -15px;
 }
+
+
+
 /*h1 {
   font-size: 2.8em;
 }

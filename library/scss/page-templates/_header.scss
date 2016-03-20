@@ -2,3 +2,31 @@
   background: url('../images/arc-leather-book-holding-page.jpg') center/cover;
 //  min-height: 80vh;
 }
+
+.header-item img {
+  max-height: 40px;
+}
+
+.article-inner.is-intro {
+  border-style: double;
+  border-width: 5px 0;
+  font-size: 1.5rem;
+}
+
+
+.header-toggle:hover {
+    background: darken($arc-red, 5%);
+}
+
+.is-active.header-toggle span {
+  background: $arc-yellow;
+}
+
+.hero.is-fullheight .tabs a {
+  padding: 0;
+}
+.hero.is-fullheight .tabs li {
+  margin: 15px 0;
+  padding: 0 20px
+
+}
