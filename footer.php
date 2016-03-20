@@ -1,8 +1,9 @@
-			<footer class="" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="wrap cf">
 
-					<nav role="navigation">
+				<div id="inner-footer" class="container">
+
+	<?php /*				<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
     					'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
@@ -19,6 +20,7 @@
 					</nav>
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+                  */  ?>
 
 				</div>
 

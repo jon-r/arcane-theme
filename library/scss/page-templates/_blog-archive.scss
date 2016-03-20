@@ -1,0 +1,16 @@
+.blog-frame,
+.mail-subscription-form {
+  max-width: 512px;
+  display: inline-block;
+  padding: 1rem;
+}
+
+.blog-frame {
+  border-bottom: solid 2px;
+}
+
+.mail-subscription-form  {
+  .is-medium {
+    border: solid 2px $arc-red;
+  }
+}

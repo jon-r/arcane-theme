@@ -5,6 +5,7 @@ var prefix = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var rename = require("gulp-rename");
 var cssnano = require('gulp-cssnano');
+var zip = require('gulp-zip');
 
 gulp.task('sass', function() {
   return gulp.src('library/scss/style.scss')
@@ -37,3 +38,9 @@ gulp.task('watch', function () {
   gulp.watch('./library/scss/**/*.scss', ['sass']);
   gulp.watch('./library/js/scripts.js', ['minjs']);
 });
+
+gulp.task('zip', function() {
+  return gulp.src(['../arcane*/**', '!./node_modules/**'])
+      .pipe(zip('arcane-theme.zip'))
+      .pipe(gulp.dest('../'));
+})

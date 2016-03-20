@@ -1,5 +1,32 @@
+.arcane-menu {
+  min-height: 900px;
+
+  background:
+    url(../images/book.jpg) center 4rem / 1100px no-repeat,
+    url(../images/paper_tile.jpg) center;
+
+  .tabs ul {
+    border: none;
+    padding: 1rem;
+  }
+
+  > .container {
+    padding-top: 4rem;
+  }
+}
+
 .section-food-menu {
   display:none;
+  columns: 2 300px;
+  column-gap: 6rem;
+
+  h2,h3,h4 {
+    border-bottom: 1px solid;
+    display: inline-block;
+  }
+  p {
+    padding-bottom: 2rem;
+  }
 }
 .section-food-menu.is-active {
   display:block;

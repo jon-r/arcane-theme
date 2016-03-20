@@ -51,7 +51,7 @@
 
   <div class="hero-footer title-bar">
     <div class="container">
-      <nav role="navigation" class="header-menu tabs is-fullwidth" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <nav role="navigation" class="header-menu tabs is-fullwidth  has-frame" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <?php wp_nav_menu([
          'container' => false,                           // remove nav container
          'container_class' => '',                 // class of container (should you choose to use it)

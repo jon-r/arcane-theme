@@ -1673,24 +1673,55 @@ $break-s: 481px;
 $break-m: 1030px;
 //hd screen
 $break-l: 1240px;*/
-body { font-family: "Times New Roman", Times, serif; background: #DDAB0F; color: #393E11; font-size: 16px; }
+body { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; color: #4c0f11; font-size: 16px; }
 
-.title-bar { background: #393E11; color: #DDAB0F; text-align: center; }
+.title-bar { background: #4c0f11; color: #DDAB0F; text-align: center; }
+
+.title-bar .title { color: #DDAB0F; }
+
+.tabs a { color: inherit; border: none; }
+
+.tabs a:hover, .tabs li.is-active a { color: inherit; text-decoration: underline; }
 
 .container { padding: 1rem; }
 
-h1, h2, h3, h4 { text-transform: uppercase; }
+.has-frame li:nth-last-child(n+2), .has-frame .column:nth-last-child(n+2) { border-right: solid 2px; }
 
-h1 { font-size: 2.8em; }
+@font-face { font-family: "Palatino Linotype"; src: url(../font/pala.ttf); font-weight: normal; font-style: normal; }
 
-h2 { font-size: 2em; }
+@font-face { font-family: "Palatino Linotype"; src: url(../font/palai.ttf); font-weight: normal; font-style: italic; }
 
-h3 { font-size: 1.4em; }
+@font-face { font-family: "Palatino Linotype"; src: url(../font/palab.ttf); font-weight: bold; font-style: normal; }
 
-h4 { font-size: 1em; }
+@font-face { font-family: "Palatino Linotype"; src: url(../font/palabi.ttf); font-weight: bold; font-style: italic; }
 
+h1, h2, h3, h4, h5, h6 { font-family: "Palatino Linotype", Book Antiqua, Georgia, serif; text-transform: uppercase; }
+
+body, p, a { font-family: "Palatino Linotype", Book Antiqua, Georgia, serif; }
+
+/*h1 { font-size: 2.8em; } h2 { font-size: 2em; } h3 { font-size: 1.4em; } h4 { font-size: 1em; }*/
 .header-splash { background: url("../images/arc-leather-book-holding-page.jpg") center/cover; }
 
-.section-food-menu { display: none; }
+.arcane-menu { min-height: 900px; background: url(../images/book.jpg) center 4rem/1100px no-repeat, url(../images/paper_tile.jpg) center; }
+
+.arcane-menu .tabs ul { border: none; padding: 1rem; }
+
+.arcane-menu > .container { padding-top: 4rem; }
+
+.section-food-menu { display: none; -webkit-columns: 2 300px; -moz-columns: 2 300px; columns: 2 300px; -webkit-column-gap: 6rem; -moz-column-gap: 6rem; column-gap: 6rem; }
+
+.section-food-menu h2, .section-food-menu h3, .section-food-menu h4 { border-bottom: 1px solid; display: inline-block; }
+
+.section-food-menu p { padding-bottom: 2rem; }
 
 .section-food-menu.is-active { display: block; }
+
+@media only screen and (max-width: 769px) { .gm-style { pointer-events: none; } }
+
+.blog-frame, .mail-subscription-form { max-width: 512px; display: inline-block; padding: 1rem; }
+
+.blog-frame { border-bottom: solid 2px; }
+
+.mail-subscription-form .is-medium { border: solid 2px #4c0f11; }
+
+.footer { background: none; }

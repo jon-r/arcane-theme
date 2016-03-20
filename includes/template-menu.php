@@ -14,13 +14,12 @@ $countA = $countB = 0;
   ?>
 
 
-<article id="menu" >
+<article id="menu" class="arcane-menu" >
   <header class="article-header title-bar">
-    <h1>Menu</h1>
+    <h2 class="title is-2">Menu</h2>
   </header>
-
   <div id="js_menuButtons" class="container">
-    <div class="tabs is-centered" >
+    <div class="tabs is-fullwidth has-frame" >
       <ul>
       <?php if( $menus->have_posts() ) : while ($menus->have_posts()) :
         $menus->the_post(); ?>

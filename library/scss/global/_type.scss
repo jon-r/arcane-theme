@@ -1,8 +1,40 @@
-h1, h2, h3, h4 {
+@font-face {
+  font-family: "Palatino Linotype";
+  src: url(../font/pala.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Palatino Linotype";
+  src: url(../font/palai.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Palatino Linotype";
+  src: url(../font/palab.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Palatino Linotype";
+  src: url(../font/palabi.ttf);
+  font-weight: bold;
+  font-style: italic;
+}
+
+$arc-font : "Palatino Linotype", Book Antiqua,Georgia,serif;
+
+
+h1, h2, h3, h4, h5 ,h6 {
 //  font-weight: bold;
+  font-family: $arc-font;
   text-transform: uppercase;
 }
-h1 {
+body, p, a {
+  font-family: $arc-font;
+}
+/*h1 {
   font-size: 2.8em;
 }
 h2 {
@@ -13,4 +45,4 @@ h3 {
 }
 h4 {
   font-size: 1em;
-}
+}*/
