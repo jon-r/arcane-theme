@@ -1,13 +1,3 @@
-
-
-/*.menu-article {
-  background: url(../images/paper_tile.jpg) center;
-  padding-top: 2rem;
-}
-.menu-title {
-  text-align: center;
-}*/
-
 .article-inner.is-menu {
 
 
@@ -29,8 +19,13 @@
 ul.menu-tabs {
   border-bottom: 2px solid $arc-red;
   padding: 1rem;
-  justify-content: center;
   font-size: 1.7rem;
+  flex-wrap: wrap;
+}
+
+.tabs li.tab-food-menu {
+  flex: 1 1 200px;
+  margin-left: 0;
 }
 
 .menu-frame {
@@ -48,11 +43,11 @@ ul.menu-tabs {
   display:none;
 
   @include jr-size('tablet') {
-    height: 90vw;
+    height: 80vw;
     overflow-x: auto;
   }
   @include jr-size('screen') {
-    height: 780px;
+    height: 750px;
   }
 }
 
@@ -73,3 +68,8 @@ ul.menu-tabs {
     float: right;
   }
 }
+
+.menu-page p + h4 {
+  margin-top:1em;
+}
+

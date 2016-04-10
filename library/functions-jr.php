@@ -10,11 +10,9 @@ function create_menus() {
       ],
       'public' => true,
       'supports' => [
-        'title',
-        'editor'
+        'title'
       ],
       'menu_icon' => 'dashicons-book',
     )
   );
 }
-

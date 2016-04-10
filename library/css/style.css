@@ -1721,14 +1721,15 @@ a.is-pulled-right { margin-top: -15px; }
 
 .hero.is-fullheight .tabs li { margin: 15px 0; padding: 0 20px; }
 
-/*.menu-article { background: url(../images/paper_tile.jpg) center; padding-top: 2rem; } .menu-title { text-align: center; }*/
 .article-inner.is-menu { text-align: center; }
 
 @media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/150% no-repeat; text-align: left; height: 1030px; } }
 
 @media only screen and (min-width: 981px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; } }
 
-ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; font-size: 1.7rem; }
+ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; font-size: 1.7rem; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.tabs li.tab-food-menu { -webkit-flex: 1 1 200px; -ms-flex: 1 1 200px; flex: 1 1 200px; margin-left: 0; }
 
 @media only screen and (min-width: 770px) { .menu-frame { padding: 2rem 8vw; width: 82vw; } }
 
@@ -1736,9 +1737,9 @@ ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; -webkit-justify-
 
 .section-food-menu { display: none; }
 
-@media only screen and (min-width: 770px) { .section-food-menu { height: 90vw; overflow-x: auto; } }
+@media only screen and (min-width: 770px) { .section-food-menu { height: 80vw; overflow-x: auto; } }
 
-@media only screen and (min-width: 981px) { .section-food-menu { height: 780px; } }
+@media only screen and (min-width: 981px) { .section-food-menu { height: 750px; } }
 
 .section-food-menu.is-active { display: block; }
 
@@ -1749,6 +1750,8 @@ ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; -webkit-justify-
 .menu-page p { line-height: 1.7; }
 
 .menu-page strong { float: right; }
+
+.menu-page p + h4 { margin-top: 1em; }
 
 .section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; border-style: solid; border-width: 1px 0; }
 
