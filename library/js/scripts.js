@@ -31,7 +31,7 @@ var viewport = updateViewportDimensions();
  * Wrap your actions in this function to throttle the frequency of firing them off, for better performance, esp. on mobile.
  * ( source: http://stackoverflow.com/questions/2854407/javascript-jquery-window-resize-how-to-fire-after-the-resize-is-completed )
 */
-var waitForFinalEvent = (function () {
+/*var waitForFinalEvent = (function () {
 	var timers = {};
 	return function (callback, ms, uniqueId) {
 		if (!uniqueId) { uniqueId = "Don't call this twice without a uniqueId"; }
@@ -41,7 +41,7 @@ var waitForFinalEvent = (function () {
 })();
 
 // how long to wait before deciding the resize has stopped, in ms. Around 50-100 should work ok.
-var timeToWaitForLast = 100;
+var timeToWaitForLast = 100;*/
 
 
 /*
@@ -105,21 +105,21 @@ function loadGravatars() {
 } // end function
 
 
-/*
- * Put all your regular jQuery in here.
-*/
-jQuery(document).ready(function($) {
-
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  //loadGravatars();
-
-
-
-
-}); /* end of as page load scripts */
+///*
+// * Put all your regular jQuery in here.
+//*/
+//jQuery(document).ready(function($) {
+//
+//  /*
+//   * Let's fire off the gravatar function
+//   * You can remove this if you don't need it
+//  */
+//  //loadGravatars();
+//
+//
+//
+//
+//}); /* end of as page load scripts */
 
 
 //menu tabs
@@ -128,11 +128,10 @@ var foodMenu = document.getElementById('js_menu');
 if (foodMenu) {
   var  foodtabs = foodMenu.getElementsByClassName('tab-food-menu'),
     foodsections = foodMenu.getElementsByClassName('section-food-menu'),
+
     menuCount = foodtabs.length;
 
   function goTab(n) {
-
-    console.log(foodMenu);
 
     for (i=0;i<menuCount;i++) {
       foodtabs[i].classList.remove('is-active');
@@ -140,6 +139,15 @@ if (foodMenu) {
     }
     foodtabs[n].classList.add('is-active');
     foodsections[n].classList.add('is-active');
+  }
+
+  //toggles the paginated tabs of only one menu 'group'
+  function pgMe(el) {
+    var bros = el.parentElement.parentElement.children,
+    broCount = bros.length;
+    for (i=0;i<broCount ;i++) {
+      bros[i].classList.toggle('is-active');
+    }
   }
 }
 

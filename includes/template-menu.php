@@ -33,19 +33,41 @@ $countA = $countB = 0;
         </ul>
       </div>
 
-      <div class="columns" >
+      <div class="columns content" >
         <?php if( $menus->have_posts() ) : while ($menus->have_posts()) : $menus->the_post(); ?>
 
+        <?php $pg2Left = get_field('page_left_2') ; $pg2Right = get_field('page_right_2') ; ?>
+
           <section class="column section-food-menu <?php echo ($countB == 0) ? 'is-active' : '' ?>">
-            <?php //the_content() ?>
-            <div  class="columns is-desktop content">
-              <div class="column menu-page">
-                <?php echo get_field('page_left') ?>
+            <article class="paginated is-active" >
+              <div class="columns is-desktop">
+                <div class="column menu-page">
+                  <?php echo get_field('page_left') ?>
+                </div>
+                <div class="column menu-page">
+                  <?php echo get_field('page_right') ?>
+                </div>
               </div>
-              <div class="column menu-page">
-                <?php echo get_field('page_right') ?>
+              <?php if ($pg2Left || $pg2Right) : ?>
+              <span onclick="pgMe(this)" class="btn-next">Next &rarr;</span>
+              <?php endif ?>
+            </article>
+
+            <?php if ($pg2Left || $pg2Right) : //second optional page ?>
+
+            <article class="paginated" >
+              <div  class="columns is-desktop">
+                <div class="column menu-page">
+                  <?php echo $pg2Left ?>
+                </div>
+                <div class="column menu-page">
+                  <?php echo $pg2Right ?>
+                </div>
               </div>
-            </div>
+              <span onclick="pgMe(this)" class="btn-prev">&larr; Prev</span>
+            </article>
+
+            <?php endif; ?>
           </section>
 
         <?php $countB++; endwhile; endif; ?>

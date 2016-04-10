@@ -51,8 +51,14 @@ ul.menu-tabs {
   }
 }
 
-.section-food-menu.is-active {
-  display:block;
+.paginated {
+  display: none;
+}
+
+.section-food-menu, .paginated {
+  &.is-active {
+    display:block;
+  }
 }
 
 .menu-page {
@@ -73,3 +79,19 @@ ul.menu-tabs {
   margin-top:1em;
 }
 
+.btn-next,
+.btn-prev {
+  position: absolute;
+  bottom: -1rem;
+  font-size: 2rem;
+  &:hover {
+    border-bottom: 1px solid $arc-red;
+  }
+}
+
+.btn-next {
+  right: 20rem;
+}
+.btn-prev {
+  left: 20rem;
+}

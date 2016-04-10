@@ -1741,7 +1741,9 @@ ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; font-size: 1.7re
 
 @media only screen and (min-width: 981px) { .section-food-menu { height: 750px; } }
 
-.section-food-menu.is-active { display: block; }
+.paginated { display: none; }
+
+.section-food-menu.is-active, .paginated.is-active { display: block; }
 
 .menu-page { padding: 2rem; }
 
@@ -1752,6 +1754,14 @@ ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; font-size: 1.7re
 .menu-page strong { float: right; }
 
 .menu-page p + h4 { margin-top: 1em; }
+
+.btn-next, .btn-prev { position: absolute; bottom: -1rem; font-size: 2rem; }
+
+.btn-next:hover, .btn-prev:hover { border-bottom: 1px solid #4c0f11; }
+
+.btn-next { right: 20rem; }
+
+.btn-prev { left: 20rem; }
 
 .section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; border-style: solid; border-width: 1px 0; }
 
