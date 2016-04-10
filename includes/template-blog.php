@@ -6,9 +6,6 @@
 
 
 <article id="blog" >
-  <header class="article-header title-bar">
-    <h5 class="title is-5">Contact</h5>
-  </header>
 
   <div class="article-inner is-blog">
 
@@ -37,9 +34,11 @@
 
         <form class="mail-subscription-form" >
 
-          <p class="control is-grouped">
+          <p class="control">
             <input class="input is-medium" type="email" placeholder="Your Email Address">
-            <button class="button is-medium" >Submit</button>
+          </p>
+          <p class="control">
+            <button class="button is-pulled-right" >Submit</button>
           </p>
 
         </form>

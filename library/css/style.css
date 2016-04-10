@@ -1673,7 +1673,7 @@ $break-s: 481px;
 $break-m: 1030px;
 //hd screen
 $break-l: 1240px;*/
-body { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; color: #4c0f11; font-size: 16px; min-height: 100vh; overflow-x: hidden; }
+body { background: url(../images/paper_tile.jpg) center, #DDAB0F; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
 
 .title-bar { background: #4c0f11; color: #DDAB0F; text-align: center; }
 
@@ -1686,7 +1686,9 @@ body { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; color: 
 @media only screen and (min-width: 770px) { .has-frame li:nth-last-child(n+2) { border-right: solid 2px; }
   .has-frame .column:nth-last-child(n+2) { border-right: double 5px; } }
 
-.article-inner { margin: 2rem auto; padding: 1rem 0.5rem; }
+.article-inner { padding: 1rem 0.5rem; }
+
+.index-title { text-align: center; margin: 2rem; }
 
 /*.wp-post-image { max-width: 100%; }*/
 @font-face { font-family: "Futura"; src: url(../font/Futura-Medium.ttf); font-weight: normal; font-style: normal; }
@@ -1719,36 +1721,44 @@ a.is-pulled-right { margin-top: -15px; }
 
 .hero.is-fullheight .tabs li { margin: 15px 0; padding: 0 20px; }
 
-.menu-article { background: url(../images/paper_tile.jpg) center; padding-top: 2rem; }
+/*.menu-article { background: url(../images/paper_tile.jpg) center; padding-top: 2rem; } .menu-title { text-align: center; }*/
+.article-inner.is-menu { text-align: center; }
 
-.menu-title { text-align: center; }
+@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/150% no-repeat; text-align: left; height: 1030px; } }
 
-.article-inner.is-menu { margin: 0; text-align: center; }
+@media only screen and (min-width: 981px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; } }
 
-.article-inner.is-menu .tabs ul { border: none; padding: 1rem; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; font-size: 1.7rem; }
 
-@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/book.jpg) center 2rem/1100px no-repeat; text-align: left; height: 875px; }
-  .article-inner.is-menu > .container { padding-top: 4rem; } }
+@media only screen and (min-width: 770px) { .menu-frame { padding: 2rem 8vw; width: 82vw; } }
+
+@media only screen and (min-width: 981px) { .menu-frame { padding: 2rem; width: auto; } }
 
 .section-food-menu { display: none; }
 
-.section-food-menu h2, .section-food-menu h3, .section-food-menu h4 { border-bottom: 1px solid; display: inline-block; }
+@media only screen and (min-width: 770px) { .section-food-menu { height: 90vw; overflow-x: auto; } }
 
-.section-food-menu p { padding-bottom: 2rem; }
-
-@media only screen and (min-width: 770px) { .section-food-menu { -webkit-columns: 2 300px; -moz-columns: 2 300px; columns: 2 300px; -webkit-column-gap: 6rem; -moz-column-gap: 6rem; column-gap: 6rem; } }
+@media only screen and (min-width: 981px) { .section-food-menu { height: 780px; } }
 
 .section-food-menu.is-active { display: block; }
 
-.gm-style { pointer-events: none; }
+.menu-page { padding: 2rem; }
 
-.section-map { height: 400px; }
+.menu-page h2, .menu-page h3, .menu-page h4 { border-bottom: 1px solid; display: inline-block; }
+
+.menu-page p { line-height: 1.7; }
+
+.menu-page strong { float: right; }
+
+.section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; border-style: solid; border-width: 1px 0; }
+
+.article-inner.is-blog { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; padding-top: 2rem; }
 
 .blog-frame, .contact-frame, .mail-subscription-form { width: calc(100% - 5rem); max-width: 600px; display: inline-block; }
 
 .blog-frame, .contact-frame { border-style: double; border-width: 5px 0; margin: 2rem; }
 
-.mail-subscription-form .is-medium { border: solid 2px #4c0f11; }
+.mail-subscription-form .form, .mail-subscription-form .button { border: solid 2px #4c0f11; }
 
 .mail-subscription-form .button { background: #4c0f11; color: #DDAB0F; }
 
@@ -1772,8 +1782,10 @@ a.is-pulled-right { margin-top: -15px; }
 
 .contact-content:not(:last-of-type) { border-bottom: 1px solid; }
 
-.footer { background: none; }
+.footer { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; }
 
 .article-content { margin: 1rem 0; padding: 1rem 0; border: solid; border-width: 1px 0; }
 
 .is-single .wp-post-image { width: 100%; }
+
+.article-inner.is-single { padding-top: 2rem; padding-bottom: 2rem; }

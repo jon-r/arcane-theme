@@ -1,7 +1,7 @@
 body {
-  background: url(../images/paper_tile_yellow.jpg) center, $arc-yellow;
+  background: url(../images/paper_tile.jpg) center, $arc-yellow;
   color: $arc-red;
-  font-size: 16px;
+  font-size: 15px;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -40,8 +40,11 @@ body {
 }
 
 .article-inner {
-  margin: 2rem auto;
   padding: 1rem 0.5rem;
+}
+.index-title {
+  text-align: center;
+  margin: 2rem;
 }
 
 /*.wp-post-image {

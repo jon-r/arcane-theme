@@ -12,7 +12,8 @@ function create_menus() {
       'supports' => [
         'title',
         'editor'
-      ]
+      ],
+      'menu_icon' => 'dashicons-book',
     )
   );
 }

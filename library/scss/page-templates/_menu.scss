@@ -1,60 +1,75 @@
 
 
-.menu-article {
+/*.menu-article {
   background: url(../images/paper_tile.jpg) center;
   padding-top: 2rem;
 }
 .menu-title {
   text-align: center;
-}
+}*/
 
 .article-inner.is-menu {
 
 
-  margin:0;
-
   text-align: center;
 
 
-  .tabs ul {
-    border: none;
-    padding: 1rem;
-    justify-content: center;
-  }
-
-
-
   @include jr-size('tablet') {
-    background: url(../images/book.jpg) center 2rem / 1100px no-repeat;
-
+    background: url(../images/moleskine.jpg) left 0/150% no-repeat;
     text-align: left;
-    height: 875px;
+    height: 1030px;
 
-    > .container {
-      padding-top: 4rem;
-    }
   }
+  @include jr-size('screen') {
+    background: url(../images/moleskine.jpg) center 0/1300px no-repeat;
+  }
+
 }
 
+ul.menu-tabs {
+  border-bottom: 2px solid $arc-red;
+  padding: 1rem;
+  justify-content: center;
+  font-size: 1.7rem;
+}
 
+.menu-frame {
+  @include jr-size('tablet') {
+    padding: 2rem 8vw;
+    width: 82vw;
+  }
+  @include jr-size('screen') {
+    padding: 2rem;
+    width: auto;
+  }
+}
 
 .section-food-menu {
   display:none;
 
+  @include jr-size('tablet') {
+    height: 90vw;
+    overflow-x: auto;
+  }
+  @include jr-size('screen') {
+    height: 780px;
+  }
+}
 
+.section-food-menu.is-active {
+  display:block;
+}
+
+.menu-page {
+  padding: 2rem;
   h2,h3,h4 {
     border-bottom: 1px solid;
     display: inline-block;
   }
   p {
-    padding-bottom: 2rem;
+    line-height: 1.7;
   }
-  @include jr-size('tablet') {
-      columns: 2 300px;
-  column-gap: 6rem;
-
+  strong {
+    float: right;
   }
-}
-.section-food-menu.is-active {
-  display:block;
 }

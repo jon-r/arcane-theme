@@ -1,5 +1,6 @@
 .article-inner.is-blog {
-
+  background: url(../images/paper_tile_yellow.jpg) center, $arc-yellow;
+  padding-top: 2rem ;
 }
 
 .blog-frame, .contact-frame,
@@ -9,6 +10,7 @@
   display: inline-block;
 }
 
+
 .blog-frame, .contact-frame {
   border-style: double;
   border-width: 5px 0;
@@ -16,7 +18,7 @@
 }
 
 .mail-subscription-form  {
-  .is-medium {
+  .form, .button {
     border: solid 2px $arc-red;
   }
   .button {
