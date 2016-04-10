@@ -1665,14 +1665,6 @@ a.menu-block:hover { background: #f5f7fa; }
 
 .footer a:not(.icon):hover { border-bottom-color: #1fc8db; }
 
-/*//base size (min);
-$break-xs: 320px;
-//tablet
-$break-s: 481px;
-//screen
-$break-m: 1030px;
-//hd screen
-$break-l: 1240px;*/
 body { background: url(../images/paper_tile.jpg) center, #DDAB0F; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
 
 .title-bar { background: #4c0f11; color: #DDAB0F; text-align: center; }
@@ -1721,7 +1713,7 @@ a.is-pulled-right { margin-top: -15px; }
 
 .hero.is-fullheight .tabs li { margin: 15px 0; padding: 0 20px; }
 
-.article-inner.is-menu { text-align: center; }
+.article-inner.is-menu { text-align: center; margin-bottom: 2rem; }
 
 @media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/150% no-repeat; text-align: left; height: 1030px; } }
 
@@ -1741,11 +1733,9 @@ ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; font-size: 1.7re
 
 @media only screen and (min-width: 981px) { .section-food-menu { height: 750px; } }
 
-.paginated { display: none; }
+@media only screen and (min-width: 981px) { .paginated { display: none; } }
 
-.section-food-menu.is-active, .paginated.is-active { display: block; }
-
-.menu-page { padding: 2rem; }
+.menu-page { padding: 2rem; display: none; }
 
 .menu-page h2, .menu-page h3, .menu-page h4 { border-bottom: 1px solid; display: inline-block; }
 
@@ -1753,15 +1743,21 @@ ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; font-size: 1.7re
 
 .menu-page strong { float: right; }
 
+@media only screen and (min-width: 981px) { .menu-page { display: block; } }
+
+.section-food-menu.is-active, .paginated.is-active, .menu-page.is-active { display: block; }
+
 .menu-page p + h4 { margin-top: 1em; }
 
 .btn-next, .btn-prev { position: absolute; bottom: -1rem; font-size: 2rem; }
 
 .btn-next:hover, .btn-prev:hover { border-bottom: 1px solid #4c0f11; }
 
-.btn-next { right: 20rem; }
+@media only screen and (min-width: 770px) { .btn-next, .btn-prev { bottom: 1rem; } }
 
-.btn-prev { left: 20rem; }
+.btn-next { right: 20%; }
+
+.btn-prev { left: 20%; }
 
 .section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; border-style: solid; border-width: 1px 0; }
 

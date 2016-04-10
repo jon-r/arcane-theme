@@ -19,8 +19,8 @@
  * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
 */
 function updateViewportDimensions() {
-	var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
-	return { width:x,height:y };
+	var w=window,x = w.innerHeight, y = w.innerWidth;
+	return { width:y,height:x }
 }
 // setting the viewport width
 var viewport = updateViewportDimensions();
@@ -126,9 +126,9 @@ function loadGravatars() {
 var foodMenu = document.getElementById('js_menu');
 
 if (foodMenu) {
-  var  foodtabs = foodMenu.getElementsByClassName('tab-food-menu'),
+  var foodtabs = foodMenu.getElementsByClassName('tab-food-menu'),
     foodsections = foodMenu.getElementsByClassName('section-food-menu'),
-
+    pgMeCount = 0,
     menuCount = foodtabs.length;
 
   function goTab(n) {
@@ -137,19 +137,55 @@ if (foodMenu) {
       foodtabs[i].classList.remove('is-active');
       foodsections[i].classList.remove('is-active');
     }
+    pgMeCount = 0; //reseting the pageception
     foodtabs[n].classList.add('is-active');
     foodsections[n].classList.add('is-active');
   }
 
   //toggles the paginated tabs of only one menu 'group'
-  function pgMe(el) {
-    var bros = el.parentElement.parentElement.children,
+  var pgMe = {
+    set : function(el) {
+      var vp = updateViewportDimensions(),
+        parent = el.parentElement.parentElement; //grandaddy, technically
+      return (vp.width < 1030) ?
+        parent.getElementsByClassName('menu-page') :
+        parent.getElementsByClassName('paginated');
+    },
+    prev : function(el) {
+      var pages = pgMe.set(el);
+      pgMeCount = Math.max(pgMeCount - 1,0);
+      pgMe.go(pgMeCount,pages);
+    },
+    next : function(el) {
+      var pages = pgMe.set(el);
+      pgMeCount = Math.min(pages.length - 1,pgMeCount + 1);
+      pgMe.go(pgMeCount,pages);
+    },
+    go : function(nth,targets) {
+      var count = targets.length;
+      for (i=0;i<count;i++) {
+        targets[i].classList.remove('is-active');
+      }
+      targets[nth].classList.add('is-active');
+    }
+  }
+
+    /*var bros = el.parentElement.parentElement.children,
     broCount = bros.length;
     for (i=0;i<broCount ;i++) {
       bros[i].classList.toggle('is-active');
-    }
-  }
-}
+    }*/
+};
+
+
+/*//base size (min);
+$break-xs: 320px;
+//tablet
+$break-s: 481px;
+//screen
+$break-m: 1030px;
+//hd screen
+$break-l: 1240px;*/
 
 ////header-toggle
 var headToggle = document.getElementById('header-toggle');

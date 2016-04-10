@@ -2,7 +2,7 @@
 
 
   text-align: center;
-
+  margin-bottom: 2rem;
 
   @include jr-size('tablet') {
     background: url(../images/moleskine.jpg) left 0/150% no-repeat;
@@ -40,7 +40,7 @@ ul.menu-tabs {
 }
 
 .section-food-menu {
-  display:none;
+   display:none;
 
   @include jr-size('tablet') {
     height: 80vw;
@@ -49,20 +49,19 @@ ul.menu-tabs {
   @include jr-size('screen') {
     height: 750px;
   }
+
 }
 
 .paginated {
-  display: none;
-}
-
-.section-food-menu, .paginated {
-  &.is-active {
-    display:block;
+  @include jr-size('screen') {
+   display: none;
   }
 }
 
+
 .menu-page {
   padding: 2rem;
+  display: none;
   h2,h3,h4 {
     border-bottom: 1px solid;
     display: inline-block;
@@ -72,6 +71,17 @@ ul.menu-tabs {
   }
   strong {
     float: right;
+  }
+  @include jr-size('screen') {
+    display: block;
+  }
+}
+
+
+//setting up paginateception
+.section-food-menu, .paginated, .menu-page,  {
+  &.is-active {
+    display:block;
   }
 }
 
@@ -87,11 +97,16 @@ ul.menu-tabs {
   &:hover {
     border-bottom: 1px solid $arc-red;
   }
+
+  @include jr-size('tablet') {
+    bottom: 1rem;
+  }
+
 }
 
 .btn-next {
-  right: 20rem;
+  right: 20%;
 }
 .btn-prev {
-  left: 20rem;
+  left: 20%;
 }

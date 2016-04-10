@@ -1,13 +1,13 @@
 //*media query setup-------------------------------------------------------------------*/
 
-/*//base size (min);
-$break-xs: 320px;
-//tablet
-$break-s: 481px;
-//screen
-$break-m: 1030px;
-//hd screen
-$break-l: 1240px;*/
+///*//base size (min);
+//$break-xs: 320px;
+////tablet
+//$break-s: 481px;
+////screen
+//$break-m: 1030px;
+////hd screen
+//$break-l: 1240px;*/
 
 @mixin jr-size($media) {
   @if $media == phoneOnly {

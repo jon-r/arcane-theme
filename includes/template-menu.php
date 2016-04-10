@@ -36,24 +36,23 @@ $countA = $countB = 0;
       <div class="columns content" >
         <?php if( $menus->have_posts() ) : while ($menus->have_posts()) : $menus->the_post(); ?>
 
-        <?php $pg2Left = get_field('page_left_2') ; $pg2Right = get_field('page_right_2') ; ?>
+
 
           <section class="column section-food-menu <?php echo ($countB == 0) ? 'is-active' : '' ?>">
             <article class="paginated is-active" >
               <div class="columns is-desktop">
-                <div class="column menu-page">
+                <div class="column menu-page is-active">
                   <?php echo get_field('page_left') ?>
                 </div>
                 <div class="column menu-page">
                   <?php echo get_field('page_right') ?>
                 </div>
               </div>
-              <?php if ($pg2Left || $pg2Right) : ?>
-              <span onclick="pgMe(this)" class="btn-next">Next &rarr;</span>
-              <?php endif ?>
+
             </article>
 
-            <?php if ($pg2Left || $pg2Right) : //second optional page ?>
+            <?php $pg2Left = get_field('page_left_2') ; $pg2Right = get_field('page_right_2') ; ?>
+            <?php $pg2 = ($pg2Left || $pg2Right); if($pg2) : //second optional page ?>
 
             <article class="paginated" >
               <div  class="columns is-desktop">
@@ -64,10 +63,14 @@ $countA = $countB = 0;
                   <?php echo $pg2Right ?>
                 </div>
               </div>
-              <span onclick="pgMe(this)" class="btn-prev">&larr; Prev</span>
+
             </article>
 
             <?php endif; ?>
+            <div class="page-nav <?php echo ($pg2) ? '' : 'is-hidden-desktop' ?>" >
+              <span onclick="pgMe.next(this)" class="btn-next">Next &rarr;</span>
+              <span onclick="pgMe.prev(this)" class="btn-prev">&larr; Prev</span>
+            </div>
           </section>
 
         <?php $countB++; endwhile; endif; ?>
