@@ -49,9 +49,10 @@
     </div>
   </div>
 
-  <div class="hero-footer title-bar">
+  <div id="js_navSticky" class="hero-footer title-bar">
+
     <div class="container">
-      <nav role="navigation" class="header-menu tabs is-centered has-frame" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <nav role="navigation" class="tabs is-centered has-frame" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <?php wp_nav_menu([
          'container' => false,                           // remove nav container
          'container_class' => '',                 // class of container (should you choose to use it)
@@ -67,6 +68,12 @@
         ]); ?>
 
       </nav>
+    </div>
+
+    <div class="nav-pointer" >
+      <a href="#menu" >
+      <img src="<?php echo get_template_directory_uri().'/library/images/pointer.svg' ?>" />
+      </a>
     </div>
   </div>
 </header>
@@ -86,18 +93,7 @@
     <span></span>
   </span>
 
-  <!-- Right side -->
-<!--  <div class="header-right header-menu">
-    <span class="header-item">
-      <a href="#">Nav item</a>
-    </span>
-    <span class="header-item">
-      <a href="#">Other nav item</a>
-    </span>
-    <span class="header-item">
-      <a class="button" href="#">Button</a>
-    </span>
-    </div>-->
+
 
     <?php wp_nav_menu([
      'container' => false,                           // remove nav container
@@ -113,7 +109,6 @@
      'fallback_cb' => ''                             // fallback function (if there is one)
     ]); ?>
 
-<!--  </div>-->
     </div>
 
 </header>

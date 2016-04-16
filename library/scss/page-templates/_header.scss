@@ -1,6 +1,9 @@
 .header-splash {
   background: url('../images/arc-leather-book-holding-page.jpg') center/cover;
-//  min-height: 80vh;
+}
+
+.hero-footer {
+  position: relative;
 }
 
 .header-item img {
@@ -30,3 +33,26 @@
   padding: 0 20px
 
 }
+
+//the pointer
+.nav-pointer {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  bottom:150%;
+  left: calc(50% - 275px);
+  animation: hover .5s cubic-bezier(.39,.58,.57,1) infinite alternate;
+  @include jr-size('phoneOnly') {
+    display: none;
+  }
+}
+
+@keyframes hover {
+  from {
+    transform: rotate(-20deg) translateY(60px);
+  }
+  to {
+    transform: rotate(-20deg) translateY(0);
+  }
+}
+

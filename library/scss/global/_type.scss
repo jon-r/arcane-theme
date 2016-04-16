@@ -1,35 +1,34 @@
 @font-face {
-  font-family: "Futura";
-  src: url(../font/Futura-Medium.ttf);
+  font-family: "Miller";
+  src: url(../font/Miller.ttf);
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: "Futura";
-  src: url(../font/Futura-MediumItalic.ttf);
+  font-family: "Miller";
+  src: url(../font/Miller-italic.ttf);
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
-  font-family: "Futura";
-  src: url(../font/Futura-CondensedExtraBold.ttf);
+  font-family: "Miller";
+  src: url(../font/Miller-bold.ttf);
   font-weight: bold;
   font-style: normal;
 }
 
-/*@font-face {
-  font-family: "Futura";
-  src: url(../font/Futura-CondensedExtraBold.ttf);
-  font-weight: bold;
-  font-style: italic;
-}*/
+///*@font-face {
+//  font-family: "Futura";
+//  src: url(../font/Futura-CondensedExtraBold.ttf);
+//  font-weight: bold;
+//  font-style: italic;
+//}*/
 
-$arc-font : "Futura", Helvetica, arial ,sans-serif;
+$arc-font : "Miller", Georgia, serif;
 
 
 body, button, input, select, textarea, .title, .subtitle, a {
   font-family: $arc-font;
-
 }
 
 .title, .subtitle, a {
@@ -44,15 +43,15 @@ a.is-pulled-right {
 }
 
 
-/*h1 {
-  font-size: 2.8em;
-}
-h2 {
-  font-size: 2em;
-}
-h3 {
-  font-size: 1.4em;
-}
-h4 {
-  font-size: 1em;
-}*/
+///*h1 {
+//  font-size: 2.8em;
+//}
+//h2 {
+//  font-size: 2em;
+//}
+//h3 {
+//  font-size: 1.4em;
+//}
+//h4 {
+//  font-size: 1em;
+//}*/

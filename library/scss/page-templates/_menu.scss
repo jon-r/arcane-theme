@@ -2,7 +2,7 @@
 
 
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 
   @include jr-size('tablet') {
     background: url(../images/moleskine.jpg) left 0/150% no-repeat;
@@ -10,60 +10,73 @@
     height: 1030px;
 
   }
-  @include jr-size('screen') {
+  @include jr-size('screen-hd') {
     background: url(../images/moleskine.jpg) center 0/1300px no-repeat;
   }
 
 }
 
 ul.menu-tabs {
-  border-bottom: 2px solid $arc-red;
-  padding: 1rem;
-  font-size: 1.7rem;
+  border-bottom: 2px solid #988682;
+
+  font-size: 1.5rem;
   flex-wrap: wrap;
+  @include jr-size('tablet') {
+     padding: 1rem;
+  }
 }
 
 .tabs li.tab-food-menu {
   flex: 1 1 200px;
   margin-left: 0;
+  color: #988682;
+}
+
+li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
+  text-decoration: none;
+  color: $arc-red;
 }
 
 .menu-frame {
   @include jr-size('tablet') {
     padding: 2rem 8vw;
     width: 82vw;
+    margin-left: 0;
   }
-  @include jr-size('screen') {
+  @include jr-size('screen-hd') {
     padding: 2rem;
     width: auto;
+    margin-left: auto;
   }
 }
 
 .section-food-menu {
-   display:none;
-
+  display:none;
+  overflow-x: auto;
+  @include jr-size('phoneOnly') {
+    max-height: 65vh;
+  }
   @include jr-size('tablet') {
     height: 80vw;
-    overflow-x: auto;
+
   }
-  @include jr-size('screen') {
+  @include jr-size('screen-hd') {
     height: 750px;
   }
 
 }
 
 .paginated {
-  @include jr-size('screen') {
+  @include jr-size('screen-hd') {
    display: none;
   }
 }
 
 
 .menu-page {
-  padding: 2rem;
+  margin: 0 40px;
   display: none;
   h2,h3,h4 {
-    border-bottom: 1px solid;
     display: inline-block;
   }
   p {
@@ -71,8 +84,9 @@ ul.menu-tabs {
   }
   strong {
     float: right;
+    font-weight:bold;
   }
-  @include jr-size('screen') {
+  @include jr-size('screen-hd') {
     display: block;
   }
 }
@@ -92,21 +106,36 @@ ul.menu-tabs {
 .btn-next,
 .btn-prev {
   position: absolute;
-  bottom: -1rem;
-  font-size: 2rem;
+  bottom: -4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
   &:hover {
     border-bottom: 1px solid $arc-red;
   }
 
-  @include jr-size('tablet') {
-    bottom: 1rem;
-  }
 
 }
 
 .btn-next {
-  right: 20%;
+  right: 1rem;
+
+  @include jr-size('tablet') {
+    bottom: 45%;
+    right: -6.5rem;
+  }
+
 }
 .btn-prev {
-  left: 20%;
+  left: 1rem;
+
+  @include jr-size('tablet') {
+    left:auto;
+    bottom: 35%;
+    right: -6.5rem;
+  }
+  @include jr-size('screen-hd') {
+    bottom: 45%;
+    right:auto;
+    left: -6.5rem;
+  }
 }

@@ -1,5 +1,5 @@
 body {
-  background: url(../images/paper_tile.jpg) center, $arc-yellow;
+  background: url(../images/paper_tile.jpg) center, $arc-red;
   color: $arc-red;
   font-size: 15px;
   min-height: 100vh;
@@ -14,7 +14,18 @@ body {
   .title {
     padding: 1rem;
   }
+
+  & > .is-fixed {
+    background: $arc-red;
+    position: fixed;
+    top:0;
+    width: 100%;
+    max-width:none;
+    z-index: 999;
+  }
 }
+
+
 
 .tabs {
   a {
@@ -44,7 +55,11 @@ body {
 }
 .index-title {
   text-align: center;
-  margin: 2rem;
+  margin: 0.5rem 2rem;
+  @include jr-size('tablet') {
+    margin: 2rem;
+  }
+
 }
 
 /*.wp-post-image {

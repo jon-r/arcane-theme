@@ -1665,11 +1665,13 @@ a.menu-block:hover { background: #f5f7fa; }
 
 .footer a:not(.icon):hover { border-bottom-color: #1fc8db; }
 
-body { background: url(../images/paper_tile.jpg) center, #DDAB0F; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
+body { background: url(../images/paper_tile.jpg) center, #4c0f11; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
 
 .title-bar { background: #4c0f11; color: #DDAB0F; text-align: center; }
 
 .title-bar .title { padding: 1rem; }
+
+.title-bar > .is-fixed { background: #4c0f11; position: fixed; top: 0; width: 100%; max-width: none; z-index: 999; }
 
 .tabs a { color: inherit; border: none; }
 
@@ -1680,17 +1682,18 @@ body { background: url(../images/paper_tile.jpg) center, #DDAB0F; color: #4c0f11
 
 .article-inner { padding: 1rem 0.5rem; }
 
-.index-title { text-align: center; margin: 2rem; }
+.index-title { text-align: center; margin: 0.5rem 2rem; }
+
+@media only screen and (min-width: 770px) { .index-title { margin: 2rem; } }
 
 /*.wp-post-image { max-width: 100%; }*/
-@font-face { font-family: "Futura"; src: url(../font/Futura-Medium.ttf); font-weight: normal; font-style: normal; }
+@font-face { font-family: "Miller"; src: url(../font/Miller.ttf); font-weight: normal; font-style: normal; }
 
-@font-face { font-family: "Futura"; src: url(../font/Futura-MediumItalic.ttf); font-weight: normal; font-style: italic; }
+@font-face { font-family: "Miller"; src: url(../font/Miller-italic.ttf); font-weight: normal; font-style: italic; }
 
-@font-face { font-family: "Futura"; src: url(../font/Futura-CondensedExtraBold.ttf); font-weight: bold; font-style: normal; }
+@font-face { font-family: "Miller"; src: url(../font/Miller-bold.ttf); font-weight: bold; font-style: normal; }
 
-/*@font-face { font-family: "Futura"; src: url(../font/Futura-CondensedExtraBold.ttf); font-weight: bold; font-style: italic; }*/
-body, button, input, select, textarea, .title, .subtitle, a { font-family: "Futura", Helvetica, arial, sans-serif; }
+body, button, input, select, textarea, .title, .subtitle, a { font-family: "Miller", Georgia, serif; }
 
 .title, .subtitle, a { color: inherit; }
 
@@ -1698,8 +1701,9 @@ body, button, input, select, textarea, .title, .subtitle, a { font-family: "Futu
 
 a.is-pulled-right { margin-top: -15px; }
 
-/*h1 { font-size: 2.8em; } h2 { font-size: 2em; } h3 { font-size: 1.4em; } h4 { font-size: 1em; }*/
 .header-splash { background: url("../images/arc-leather-book-holding-page.jpg") center/cover; }
+
+.hero-footer { position: relative; }
 
 .header-item img { max-height: 40px; }
 
@@ -1713,51 +1717,71 @@ a.is-pulled-right { margin-top: -15px; }
 
 .hero.is-fullheight .tabs li { margin: 15px 0; padding: 0 20px; }
 
-.article-inner.is-menu { text-align: center; margin-bottom: 2rem; }
+.nav-pointer { position: absolute; height: 150px; width: 150px; bottom: 150%; left: calc(50% - 275px); -webkit-animation: hover 0.5s cubic-bezier(0.39, 0.58, 0.57, 1) infinite alternate; animation: hover 0.5s cubic-bezier(0.39, 0.58, 0.57, 1) infinite alternate; }
+
+@media only screen and (max-width: 769px) { .nav-pointer { display: none; } }
+
+@-webkit-keyframes hover { from { -webkit-transform: rotate(-20deg) translateY(60px); transform: rotate(-20deg) translateY(60px); }
+  to { -webkit-transform: rotate(-20deg) translateY(0); transform: rotate(-20deg) translateY(0); } }
+
+@keyframes hover { from { -webkit-transform: rotate(-20deg) translateY(60px); transform: rotate(-20deg) translateY(60px); }
+  to { -webkit-transform: rotate(-20deg) translateY(0); transform: rotate(-20deg) translateY(0); } }
+
+.article-inner.is-menu { text-align: center; margin-bottom: 5rem; }
 
 @media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/150% no-repeat; text-align: left; height: 1030px; } }
 
-@media only screen and (min-width: 981px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; } }
+@media only screen and (min-width: 1180px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; } }
 
-ul.menu-tabs { border-bottom: 2px solid #4c0f11; padding: 1rem; font-size: 1.7rem; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+ul.menu-tabs { border-bottom: 2px solid #988682; font-size: 1.5rem; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-.tabs li.tab-food-menu { -webkit-flex: 1 1 200px; -ms-flex: 1 1 200px; flex: 1 1 200px; margin-left: 0; }
+@media only screen and (min-width: 770px) { ul.menu-tabs { padding: 1rem; } }
 
-@media only screen and (min-width: 770px) { .menu-frame { padding: 2rem 8vw; width: 82vw; } }
+.tabs li.tab-food-menu { -webkit-flex: 1 1 200px; -ms-flex: 1 1 200px; flex: 1 1 200px; margin-left: 0; color: #988682; }
 
-@media only screen and (min-width: 981px) { .menu-frame { padding: 2rem; width: auto; } }
+li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; color: #4c0f11; }
 
-.section-food-menu { display: none; }
+@media only screen and (min-width: 770px) { .menu-frame { padding: 2rem 8vw; width: 82vw; margin-left: 0; } }
 
-@media only screen and (min-width: 770px) { .section-food-menu { height: 80vw; overflow-x: auto; } }
+@media only screen and (min-width: 1180px) { .menu-frame { padding: 2rem; width: auto; margin-left: auto; } }
 
-@media only screen and (min-width: 981px) { .section-food-menu { height: 750px; } }
+.section-food-menu { display: none; overflow-x: auto; }
 
-@media only screen and (min-width: 981px) { .paginated { display: none; } }
+@media only screen and (max-width: 769px) { .section-food-menu { max-height: 65vh; } }
 
-.menu-page { padding: 2rem; display: none; }
+@media only screen and (min-width: 770px) { .section-food-menu { height: 80vw; } }
 
-.menu-page h2, .menu-page h3, .menu-page h4 { border-bottom: 1px solid; display: inline-block; }
+@media only screen and (min-width: 1180px) { .section-food-menu { height: 750px; } }
+
+@media only screen and (min-width: 1180px) { .paginated { display: none; } }
+
+.menu-page { margin: 0 40px; display: none; }
+
+.menu-page h2, .menu-page h3, .menu-page h4 { display: inline-block; }
 
 .menu-page p { line-height: 1.7; }
 
-.menu-page strong { float: right; }
+.menu-page strong { float: right; font-weight: bold; }
 
-@media only screen and (min-width: 981px) { .menu-page { display: block; } }
+@media only screen and (min-width: 1180px) { .menu-page { display: block; } }
 
 .section-food-menu.is-active, .paginated.is-active, .menu-page.is-active { display: block; }
 
 .menu-page p + h4 { margin-top: 1em; }
 
-.btn-next, .btn-prev { position: absolute; bottom: -1rem; font-size: 2rem; }
+.btn-next, .btn-prev { position: absolute; bottom: -4rem; font-size: 1.5rem; cursor: pointer; }
 
 .btn-next:hover, .btn-prev:hover { border-bottom: 1px solid #4c0f11; }
 
-@media only screen and (min-width: 770px) { .btn-next, .btn-prev { bottom: 1rem; } }
+.btn-next { right: 1rem; }
 
-.btn-next { right: 20%; }
+@media only screen and (min-width: 770px) { .btn-next { bottom: 45%; right: -6.5rem; } }
 
-.btn-prev { left: 20%; }
+.btn-prev { left: 1rem; }
+
+@media only screen and (min-width: 770px) { .btn-prev { left: auto; bottom: 35%; right: -6.5rem; } }
+
+@media only screen and (min-width: 1180px) { .btn-prev { bottom: 45%; right: auto; left: -6.5rem; } }
 
 .section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; border-style: solid; border-width: 1px 0; }
 

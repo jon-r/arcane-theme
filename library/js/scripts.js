@@ -147,7 +147,7 @@ if (foodMenu) {
     set : function(el) {
       var vp = updateViewportDimensions(),
         parent = el.parentElement.parentElement; //grandaddy, technically
-      return (vp.width < 1030) ?
+      return (vp.width < 1180) ?
         parent.getElementsByClassName('menu-page') :
         parent.getElementsByClassName('paginated');
     },
@@ -212,3 +212,53 @@ $(function() {
     }
   });
 });
+
+
+function throttle(fn, threshhold, scope) {
+  threshhold || (threshhold = 250);
+  var last,
+      deferTimer;
+  return function () {
+    var context = scope || this;
+
+    var now = +new Date,
+        args = arguments;
+    if (last && now < last + threshhold) {
+      // hold on to it
+      clearTimeout(deferTimer);
+      deferTimer = setTimeout(function () {
+        last = now;
+        fn.apply(context, args);
+      }, threshhold);
+    } else {
+      last = now;
+      fn.apply(context, args);
+    }
+  };
+}
+
+//sticky nav + pointy fingers
+var headNav = document.getElementById("js_navSticky"),
+    headNavChild = headNav.firstElementChild,
+    headNavLinks = headNav.getElementsByClassName("navbar-item");
+
+window.onscroll = throttle(
+  function() {
+
+    if (headNav.getBoundingClientRect().top < 0) {
+      headNav.style.height = headNavChild.clientHeight + "px";
+      headNavChild.classList.add('is-fixed');
+    } else {
+      headNav.style.height = 'auto'
+      headNavChild.classList.remove('is-fixed');
+    };
+//  for (i = 0; i < navBtnCount; i++) {
+//    var blockTop = pgBlocks[i].getBoundingClientRect().top;
+//    if (blockTop > -200 && blockTop < 200 ) {
+//      for (j = 0; j < navBtnCount; j++) {
+//        navBtn[j].classList.remove('is-active')
+//      }
+//      navBtn[i].classList.add('is-active');
+//    }
+//  }
+}, 30);
