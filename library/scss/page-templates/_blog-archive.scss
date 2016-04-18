@@ -34,6 +34,9 @@
 .blog-frame .post-thumb {
   max-width:50%;
 }
+.blog-frame .title-image {
+  max-width:320px
+}
 .wp-post-image {
   height:auto;
 }
@@ -66,6 +69,6 @@
   padding: 1rem;
 }
 
-.contact-content:not(:last-of-type) {
+.contact-content:not(:last-of-type), .blog-frame .index-title {
   border-bottom: 1px solid;
 }

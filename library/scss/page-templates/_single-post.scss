@@ -13,4 +13,6 @@
 .article-inner.is-single {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  background: url(../images/paper_tile_yellow.jpg) center, $arc-yellow;
+  min-height: calc(100vh - 100px);
 }

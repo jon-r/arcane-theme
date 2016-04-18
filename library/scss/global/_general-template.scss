@@ -53,13 +53,11 @@ body {
 .article-inner {
   padding: 1rem 0.5rem;
 }
-.index-title {
-  text-align: center;
-  margin: 0.5rem 2rem;
-  @include jr-size('tablet') {
-    margin: 2rem;
-  }
 
+
+.title-image {
+  width:calc(100% - 1rem);
+  max-width:480px
 }
 
 /*.wp-post-image {

@@ -16,8 +16,8 @@ $countA = $countB = 0;
 
 <article id="menu" class="menu-article"  >
 
-<header class="article-header index-title">
-    <h3 class="title is-3">Menu</h3>
+<header class="article-header is-text-centered">
+  <img class="title-image" alt="the menu" src="<?php echo get_template_directory_uri().'/library/images/arcane-menu.png' ?>" />
 </header>
 
   <div class="article-inner is-menu">

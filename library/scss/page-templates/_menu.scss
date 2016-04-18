@@ -5,13 +5,14 @@
   margin-bottom: 5rem;
 
   @include jr-size('tablet') {
-    background: url(../images/moleskine.jpg) left 0/150% no-repeat;
+    background: url(../images/moleskine.jpg) left 0/144% no-repeat;
     text-align: left;
-    height: 1030px;
+    height: 113vw;
 
   }
   @include jr-size('screen-hd') {
     background: url(../images/moleskine.jpg) center 0/1300px no-repeat;
+    height: 990px;
   }
 
 }
@@ -19,15 +20,15 @@
 ul.menu-tabs {
   border-bottom: 2px solid #988682;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   flex-wrap: wrap;
   @include jr-size('tablet') {
-     padding: 1rem;
+     padding: 0.5rem;
   }
 }
 
 .tabs li.tab-food-menu {
-  flex: 1 1 200px;
+  flex: 1 1 125px;
   margin-left: 0;
   color: #988682;
 }
@@ -39,14 +40,14 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
 
 .menu-frame {
   @include jr-size('tablet') {
-    padding: 2rem 8vw;
-    width: 82vw;
-    margin-left: 0;
+    padding: 3rem 8vw;
+    width: 75vw;
+    margin-left: 1vw;
   }
   @include jr-size('screen-hd') {
     padding: 2rem;
     width: auto;
-    margin-left: auto;
+    margin: 0.5rem auto;
   }
 }
 
@@ -57,7 +58,7 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
     max-height: 65vh;
   }
   @include jr-size('tablet') {
-    height: 80vw;
+    height: 85vw;
 
   }
   @include jr-size('screen-hd') {
@@ -76,6 +77,7 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
 .menu-page {
   margin: 0 40px;
   display: none;
+  color:#222;
   h2,h3,h4 {
     display: inline-block;
   }
@@ -105,12 +107,13 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
 
 .btn-next,
 .btn-prev {
+  color: #988682;
   position: absolute;
   bottom: -4rem;
   font-size: 1.5rem;
   cursor: pointer;
   &:hover {
-    border-bottom: 1px solid $arc-red;
+    color: $arc-red;
   }
 
 

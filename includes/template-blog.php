@@ -14,18 +14,18 @@
       <section class="column">
 
         <div class="blog-frame">
-          <img src="<?php echo get_template_directory_uri().'/library/images/arcanelogo2.png' ?>" />
+            <img class="title-image" alt="the blog"
+               src="<?php echo get_template_directory_uri().'/library/images/arcanelogo2.png' ?>" />
 
+        <?php  if($blogPosts->have_posts()) : while($blogPosts->have_posts()) :  $blogPosts->the_post();?>
 
-      <?php  if($blogPosts->have_posts()) : while($blogPosts->have_posts()) :  $blogPosts->the_post();?>
+          <?php include(locate_template('includes/template-post.php')); ?>
 
-        <?php include(locate_template('includes/template-post.php')); ?>
+        <?php endwhile; else: ?>
 
-      <?php endwhile; else: ?>
+        Oops, there are no posts.
 
-      Oops, there are no posts.
-
-      <?php endif; ?>
+        <?php endif; ?>
 
         </div>
 

@@ -1682,9 +1682,7 @@ body { background: url(../images/paper_tile.jpg) center, #4c0f11; color: #4c0f11
 
 .article-inner { padding: 1rem 0.5rem; }
 
-.index-title { text-align: center; margin: 0.5rem 2rem; }
-
-@media only screen and (min-width: 770px) { .index-title { margin: 2rem; } }
+.title-image { width: calc(100% - 1rem); max-width: 480px; }
 
 /*.wp-post-image { max-width: 100%; }*/
 @font-face { font-family: "Miller"; src: url(../font/Miller.ttf); font-weight: normal; font-style: normal; }
@@ -1729,33 +1727,33 @@ a.is-pulled-right { margin-top: -15px; }
 
 .article-inner.is-menu { text-align: center; margin-bottom: 5rem; }
 
-@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/150% no-repeat; text-align: left; height: 1030px; } }
+@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/144% no-repeat; text-align: left; height: 113vw; } }
 
-@media only screen and (min-width: 1180px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; } }
+@media only screen and (min-width: 1180px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; height: 990px; } }
 
-ul.menu-tabs { border-bottom: 2px solid #988682; font-size: 1.5rem; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+ul.menu-tabs { border-bottom: 2px solid #988682; font-size: 1.2rem; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-@media only screen and (min-width: 770px) { ul.menu-tabs { padding: 1rem; } }
+@media only screen and (min-width: 770px) { ul.menu-tabs { padding: 0.5rem; } }
 
-.tabs li.tab-food-menu { -webkit-flex: 1 1 200px; -ms-flex: 1 1 200px; flex: 1 1 200px; margin-left: 0; color: #988682; }
+.tabs li.tab-food-menu { -webkit-flex: 1 1 125px; -ms-flex: 1 1 125px; flex: 1 1 125px; margin-left: 0; color: #988682; }
 
 li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; color: #4c0f11; }
 
-@media only screen and (min-width: 770px) { .menu-frame { padding: 2rem 8vw; width: 82vw; margin-left: 0; } }
+@media only screen and (min-width: 770px) { .menu-frame { padding: 3rem 8vw; width: 75vw; margin-left: 1vw; } }
 
-@media only screen and (min-width: 1180px) { .menu-frame { padding: 2rem; width: auto; margin-left: auto; } }
+@media only screen and (min-width: 1180px) { .menu-frame { padding: 2rem; width: auto; margin: 0.5rem auto; } }
 
 .section-food-menu { display: none; overflow-x: auto; }
 
 @media only screen and (max-width: 769px) { .section-food-menu { max-height: 65vh; } }
 
-@media only screen and (min-width: 770px) { .section-food-menu { height: 80vw; } }
+@media only screen and (min-width: 770px) { .section-food-menu { height: 85vw; } }
 
 @media only screen and (min-width: 1180px) { .section-food-menu { height: 750px; } }
 
 @media only screen and (min-width: 1180px) { .paginated { display: none; } }
 
-.menu-page { margin: 0 40px; display: none; }
+.menu-page { margin: 0 40px; display: none; color: #222; }
 
 .menu-page h2, .menu-page h3, .menu-page h4 { display: inline-block; }
 
@@ -1769,9 +1767,9 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .menu-page p + h4 { margin-top: 1em; }
 
-.btn-next, .btn-prev { position: absolute; bottom: -4rem; font-size: 1.5rem; cursor: pointer; }
+.btn-next, .btn-prev { color: #988682; position: absolute; bottom: -4rem; font-size: 1.5rem; cursor: pointer; }
 
-.btn-next:hover, .btn-prev:hover { border-bottom: 1px solid #4c0f11; }
+.btn-next:hover, .btn-prev:hover { color: #4c0f11; }
 
 .btn-next { right: 1rem; }
 
@@ -1799,6 +1797,8 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .blog-frame .post-thumb { max-width: 50%; }
 
+.blog-frame .title-image { max-width: 320px; }
+
 .wp-post-image { height: auto; }
 
 .post-content { text-align: left; margin-left: 1rem; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
@@ -1813,12 +1813,12 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .contact-content { padding: 1rem; }
 
-.contact-content:not(:last-of-type) { border-bottom: 1px solid; }
+.contact-content:not(:last-of-type), .blog-frame .index-title { border-bottom: 1px solid; }
 
-.footer { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; }
+.footer { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; text-align: center; padding: 1rem; height: 50px; }
 
 .article-content { margin: 1rem 0; padding: 1rem 0; border: solid; border-width: 1px 0; }
 
 .is-single .wp-post-image { width: 100%; }
 
-.article-inner.is-single { padding-top: 2rem; padding-bottom: 2rem; }
+.article-inner.is-single { padding-top: 2rem; padding-bottom: 2rem; background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; min-height: calc(100vh - 100px); }
