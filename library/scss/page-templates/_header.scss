@@ -18,20 +18,25 @@
 
 
 .header-toggle:hover {
-    background: darken($arc-red, 5%);
+    background: darken($arc-red, 10%);
 }
 
 .is-active.header-toggle span {
   background: $arc-yellow;
 }
 
-.hero.is-fullheight .tabs a {
-  padding: 0;
-}
-.hero.is-fullheight .tabs li {
-  margin: 15px 0;
-  padding: 0 20px
+.hero.is-fullheight .tabs {
+  a {
+    padding: 0;
+  }
+  a:hover {
+    color: darken($arc-yellow, 10%);
+  }
+  li {
+    margin: 15px 0;
+    padding: 0 20px
 
+  }
 }
 
 //the pointer

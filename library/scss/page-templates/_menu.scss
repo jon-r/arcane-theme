@@ -8,11 +8,11 @@
     background: url(../images/moleskine.jpg) left 0/144% no-repeat;
     text-align: left;
     height: 113vw;
-
+    margin-bottom: 0;
   }
   @include jr-size('screen-hd') {
     background: url(../images/moleskine.jpg) center 0/1300px no-repeat;
-    height: 990px;
+    height: 1000px;
   }
 
 }

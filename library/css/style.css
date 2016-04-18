@@ -1675,8 +1675,6 @@ body { background: url(../images/paper_tile.jpg) center, #4c0f11; color: #4c0f11
 
 .tabs a { color: inherit; border: none; }
 
-.tabs a:hover, .tabs li.is-active a { color: inherit; text-decoration: underline; }
-
 @media only screen and (min-width: 770px) { .has-frame li:nth-last-child(n+2) { border-right: solid 2px; }
   .has-frame .column:nth-last-child(n+2) { border-right: double 5px; } }
 
@@ -1695,6 +1693,8 @@ body, button, input, select, textarea, .title, .subtitle, a { font-family: "Mill
 
 .title, .subtitle, a { color: inherit; }
 
+.title a:hover, .subtitle a:hover { border-bottom: 0; }
+
 .title, .subtitle, .tabs a { text-transform: uppercase; }
 
 a.is-pulled-right { margin-top: -15px; }
@@ -1707,11 +1707,13 @@ a.is-pulled-right { margin-top: -15px; }
 
 .article-inner.is-intro { border-style: double; border-width: 5px 0; font-size: 1.5rem; }
 
-.header-toggle:hover { background: #370b0c; }
+.header-toggle:hover { background: #210707; }
 
 .is-active.header-toggle span { background: #DDAB0F; }
 
 .hero.is-fullheight .tabs a { padding: 0; }
+
+.hero.is-fullheight .tabs a:hover { color: #ad860c; }
 
 .hero.is-fullheight .tabs li { margin: 15px 0; padding: 0 20px; }
 
@@ -1727,9 +1729,9 @@ a.is-pulled-right { margin-top: -15px; }
 
 .article-inner.is-menu { text-align: center; margin-bottom: 5rem; }
 
-@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/144% no-repeat; text-align: left; height: 113vw; } }
+@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/144% no-repeat; text-align: left; height: 113vw; margin-bottom: 0; } }
 
-@media only screen and (min-width: 1180px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; height: 990px; } }
+@media only screen and (min-width: 1180px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; height: 1000px; } }
 
 ul.menu-tabs { border-bottom: 2px solid #988682; font-size: 1.2rem; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
@@ -1781,7 +1783,7 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 @media only screen and (min-width: 1180px) { .btn-prev { bottom: 45%; right: auto; left: -6.5rem; } }
 
-.section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; border-style: solid; border-width: 1px 0; }
+.section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; }
 
 .article-inner.is-blog { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; padding-top: 2rem; }
 
@@ -1797,7 +1799,7 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .blog-frame .post-thumb { max-width: 50%; }
 
-.blog-frame .title-image { max-width: 320px; }
+.blog-frame .title-image { max-width: 280px; padding: 1rem; }
 
 .wp-post-image { height: auto; }
 

@@ -32,10 +32,6 @@ body {
     color: inherit;
     border: none;
   }
-  a:hover, li.is-active a {
-    color: inherit;
-    text-decoration: underline;
-  }
 }
 
 @include jr-size('tablet') {

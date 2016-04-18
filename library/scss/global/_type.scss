@@ -34,6 +34,11 @@ body, button, input, select, textarea, .title, .subtitle, a {
 .title, .subtitle, a {
   color: inherit;
 }
+.title, .subtitle {
+  a:hover {
+    border-bottom: 0;
+  }
+}
 .title, .subtitle, .tabs a {
   text-transform: uppercase;
 }
