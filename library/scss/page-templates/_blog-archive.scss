@@ -18,10 +18,15 @@
 }
 
 .mail-subscription-form  {
-  .form, .button {
-    border: solid 2px $arc-red;
+  .control {
+    text-align: center;
+  }
+  .input {
+    width: 70%;
+    margin: 0 15%;
   }
   .button {
+    border: solid 2px $arc-red;
     background: $arc-red;
     color: $arc-yellow;
   }

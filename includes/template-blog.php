@@ -38,7 +38,7 @@
             <input class="input is-medium" type="email" placeholder="Your Email Address">
           </p>
           <p class="control">
-            <button class="button is-pulled-right" >Submit</button>
+            <button class="button" >Submit</button>
           </p>
 
         </form>

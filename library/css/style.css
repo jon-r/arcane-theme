@@ -1667,11 +1667,11 @@ a.menu-block:hover { background: #f5f7fa; }
 
 body { background: url(../images/paper_tile.jpg) center, #4c0f11; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
 
-.title-bar { background: #4c0f11; color: #DDAB0F; text-align: center; }
+.title-bar { color: #DDAB0F; text-align: center; }
 
 .title-bar .title { padding: 1rem; }
 
-.title-bar > .is-fixed { background: #4c0f11; position: fixed; top: 0; width: 100%; max-width: none; z-index: 999; }
+.title-bar > .is-fixed { background: #4c0f11; position: fixed; top: 0; width: 100%; max-width: none; z-index: 999; padding: 0 1rem; }
 
 .tabs a { color: inherit; border: none; }
 
@@ -1757,17 +1757,17 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .menu-page { margin: 0 40px; display: none; color: #222; }
 
-.menu-page h2, .menu-page h3, .menu-page h4 { display: inline-block; }
+.menu-page h2, .menu-page h3, .menu-page h4 { display: inline-block; margin-bottom: 0; }
 
 .menu-page p { line-height: 1.7; }
+
+.menu-page p + h4 { margin-top: 1em; }
 
 .menu-page strong { float: right; font-weight: bold; }
 
 @media only screen and (min-width: 1180px) { .menu-page { display: block; } }
 
 .section-food-menu.is-active, .paginated.is-active, .menu-page.is-active { display: block; }
-
-.menu-page p + h4 { margin-top: 1em; }
 
 .btn-next, .btn-prev { color: #988682; position: absolute; bottom: -4rem; font-size: 1.5rem; cursor: pointer; }
 
@@ -1791,9 +1791,11 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .blog-frame, .contact-frame { border-style: double; border-width: 5px 0; margin: 2rem; }
 
-.mail-subscription-form .form, .mail-subscription-form .button { border: solid 2px #4c0f11; }
+.mail-subscription-form .control { text-align: center; }
 
-.mail-subscription-form .button { background: #4c0f11; color: #DDAB0F; }
+.mail-subscription-form .input, .mail-subscription-form .textarea { width: 70%; margin: 0 15%; }
+
+.mail-subscription-form .button { border: solid 2px #4c0f11; background: #4c0f11; color: #DDAB0F; }
 
 .post-frame { margin: 0 0 1rem; display: -webkit-flex; display: -ms-flexbox; display: flex; }
 

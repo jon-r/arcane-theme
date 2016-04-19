@@ -80,9 +80,13 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   color:#222;
   h2,h3,h4 {
     display: inline-block;
+    margin-bottom: 0;
   }
   p {
     line-height: 1.7;
+  }
+  p + h4 {
+    margin-top:1em;
   }
   strong {
     float: right;
@@ -93,7 +97,6 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   }
 }
 
-
 //setting up paginateception
 .section-food-menu, .paginated, .menu-page,  {
   &.is-active {
@@ -101,9 +104,6 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   }
 }
 
-.menu-page p + h4 {
-  margin-top:1em;
-}
 
 .btn-next,
 .btn-prev {

@@ -80,7 +80,7 @@
 <?php else : ?>
 
 <header class="header title-bar">
-  <div class="container">
+  <div class="container is-fixed">
     <div class="header-left">
       <a class="header-item" href="<?php echo home_url() ?>">
         <img class="" src="<?php echo get_template_directory_uri().'/library/images/arcanelogo1.png' ?>" />

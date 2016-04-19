@@ -19,8 +19,8 @@
  * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
 */
 function updateViewportDimensions() {
-	var w=window,x = w.innerHeight, y = w.innerWidth;
-	return { width:y,height:x }
+	var w = window, x = w.innerHeight, y = w.innerWidth;
+	return { width: y, height: x };
 }
 // setting the viewport width
 var viewport = updateViewportDimensions();
@@ -98,10 +98,10 @@ function loadGravatars() {
   viewport = updateViewportDimensions();
   // if the viewport is tablet or larger, we load in the gravatars
   if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
-	}
+    jQuery('.comment img[data-gravatar]').each(function () {
+      jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+    });
+  }
 } // end function
 
 
@@ -122,6 +122,7 @@ function loadGravatars() {
 //}); /* end of as page load scripts */
 
 
+
 //menu tabs
 var foodMenu = document.getElementById('js_menu');
 
@@ -131,16 +132,6 @@ if (foodMenu) {
     pgMeCount = 0,
     menuCount = foodtabs.length;
 
-  function goTab(n) {
-
-    for (i=0;i<menuCount;i++) {
-      foodtabs[i].classList.remove('is-active');
-      foodsections[i].classList.remove('is-active');
-    }
-    pgMeCount = 0; //reseting the pageception
-    foodtabs[n].classList.add('is-active');
-    foodsections[n].classList.add('is-active');
-  }
 
   //toggles the paginated tabs of only one menu 'group'
   var pgMe = {
@@ -163,20 +154,44 @@ if (foodMenu) {
     },
     go : function(nth,targets) {
       var count = targets.length;
-      for (i=0;i<count;i++) {
+      for (i = 0; i < count; i++) {
         targets[i].classList.remove('is-active');
       }
       targets[nth].classList.add('is-active');
     }
+  };
+
+  //grouping on the menu
+  $(foodsections).find(":header").each(function( i ) {
+    $(this).addClass('menu-single-title').nextUntil(":header").wrapAll('<div id="single' + i + '" class="menu-single" />');
+  })
+
+
+}
+
+function goTab(n) {
+
+  for (i = 0; i < menuCount; i++) {
+    foodtabs[i].classList.remove('is-active');
+    foodsections[i].classList.remove('is-active');
   }
+  pgMeCount = 0; //reseting the pageception
+  foodtabs[n].classList.add('is-active');
+  foodsections[n].classList.add('is-active');
+}
 
-    /*var bros = el.parentElement.parentElement.children,
-    broCount = bros.length;
-    for (i=0;i<broCount ;i++) {
-      bros[i].classList.toggle('is-active');
-    }*/
-};
 
+//$.fn.extend({
+//  groupl : function (wrappingElement, selector) {
+//    wrappingElement = typeof wrappingElement !== 'undefined' ? wrappingElement : '<div />';
+//    selector = typeof selector !== 'undefined' ? selector :  this.find(":header");
+//
+//    this.each(function () {
+//      this.nextUntil(selector).wrapAll(wrappingElement);
+//    });
+//    return this;
+//  }
+//});
 
 /*//base size (min);
 $break-xs: 320px;
@@ -237,7 +252,7 @@ function throttle(fn, threshhold, scope) {
   };
 }
 
-//sticky nav + pointy fingers
+//sticky nav
 var headNav = document.getElementById("js_navSticky"),
     headNavChild = headNav.firstElementChild,
     headNavLinks = headNav.getElementsByClassName("navbar-item");
@@ -252,13 +267,5 @@ window.onscroll = throttle(
       headNav.style.height = 'auto'
       headNavChild.classList.remove('is-fixed');
     };
-//  for (i = 0; i < navBtnCount; i++) {
-//    var blockTop = pgBlocks[i].getBoundingClientRect().top;
-//    if (blockTop > -200 && blockTop < 200 ) {
-//      for (j = 0; j < navBtnCount; j++) {
-//        navBtn[j].classList.remove('is-active')
-//      }
-//      navBtn[i].classList.add('is-active');
-//    }
-//  }
 }, 30);
+

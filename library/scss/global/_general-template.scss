@@ -7,7 +7,6 @@ body {
 }
 
 .title-bar {
-  background: $arc-red;
   color: $arc-yellow;
   text-align: center;
 
@@ -22,6 +21,7 @@ body {
     width: 100%;
     max-width:none;
     z-index: 999;
+    padding: 0 1rem;
   }
 }
 
