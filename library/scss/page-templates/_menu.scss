@@ -1,12 +1,9 @@
 .article-inner.is-menu {
 
-
-  text-align: center;
   margin-bottom: 5rem;
 
   @include jr-size('tablet') {
     background: url(../images/moleskine.jpg) left 0/144% no-repeat;
-    text-align: left;
     height: 113vw;
     margin-bottom: 0;
   }
@@ -54,9 +51,6 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
 .section-food-menu {
   display:none;
   overflow-x: auto;
-  @include jr-size('phoneOnly') {
-    max-height: 65vh;
-  }
   @include jr-size('tablet') {
     height: 85vw;
 
@@ -75,8 +69,9 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
 
 
 .menu-page {
-  margin: 0 40px;
-  display: none;
+  margin: 0 auto;
+  max-width: 480px;
+  padding: 0 30px;
   color:#222;
   h2,h3,h4 {
     display: inline-block;
@@ -92,6 +87,11 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
     float: right;
     font-weight:bold;
   }
+  @include jr-size('tablet') {
+    max-width: none;
+    display: none;
+//    margin: 0 40px;
+  }
   @include jr-size('screen-hd') {
     display: block;
   }
@@ -104,6 +104,12 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   }
 }
 
+.page-nav {
+  display: none;
+  @include jr-size('tablet') {
+    display: block;
+  }
+}
 
 .btn-next,
 .btn-prev {
@@ -115,30 +121,51 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   &:hover {
     color: $arc-red;
   }
-
-
 }
 
 .btn-next {
-  right: 1rem;
-
-  @include jr-size('tablet') {
-    bottom: 45%;
-    right: -6.5rem;
-  }
-
+  bottom: 45%;
+  right: -6.5rem;
 }
-.btn-prev {
-  left: 1rem;
 
-  @include jr-size('tablet') {
-    left:auto;
-    bottom: 35%;
-    right: -6.5rem;
-  }
+.btn-prev {
+  bottom: 35%;
+  right: -6.5rem;
   @include jr-size('screen-hd') {
     bottom: 45%;
-    right:auto;
+    right: auto;
     left: -6.5rem;
   }
+}
+
+@include jr-size('phoneOnly') {
+  .menu-single {
+    height: 0;
+    overflow: hidden;
+  }
+
+  .menu-single-title {
+    margin-top: 40px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "◁";
+      position: absolute;
+      right: -20px;
+      top:0;
+    }
+
+    &.is-active {
+      &::after {
+        content: "▽";
+      }
+      + .menu-single {
+        height: auto;
+      }
+    }
+
+  }
+
 }

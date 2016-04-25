@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary { margin: 0; padding: 0; border: 0; font-size: 100%; font-weight: normal; vertical-align: baseline; background: transparent; }
 
 article, aside, figure, footer, header, nav, section, details, summary { display: block; }
@@ -1665,7 +1666,7 @@ a.menu-block:hover { background: #f5f7fa; }
 
 .footer a:not(.icon):hover { border-bottom-color: #1fc8db; }
 
-body { background: url(../images/paper_tile.jpg) center, #4c0f11; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
+body { background: url(../images/paper_tile.jpg) top center, #4c0f11; color: #4c0f11; font-size: 15px; min-height: 100vh; overflow-x: hidden; }
 
 .title-bar { color: #DDAB0F; text-align: center; }
 
@@ -1727,9 +1728,9 @@ a.is-pulled-right { margin-top: -15px; }
 @keyframes hover { from { -webkit-transform: rotate(-20deg) translateY(60px); transform: rotate(-20deg) translateY(60px); }
   to { -webkit-transform: rotate(-20deg) translateY(0); transform: rotate(-20deg) translateY(0); } }
 
-.article-inner.is-menu { text-align: center; margin-bottom: 5rem; }
+.article-inner.is-menu { margin-bottom: 5rem; }
 
-@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/144% no-repeat; text-align: left; height: 113vw; margin-bottom: 0; } }
+@media only screen and (min-width: 770px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) left 0/144% no-repeat; height: 113vw; margin-bottom: 0; } }
 
 @media only screen and (min-width: 1180px) { .article-inner.is-menu { background: url(../images/moleskine.jpg) center 0/1300px no-repeat; height: 1000px; } }
 
@@ -1747,15 +1748,13 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .section-food-menu { display: none; overflow-x: auto; }
 
-@media only screen and (max-width: 769px) { .section-food-menu { max-height: 65vh; } }
-
 @media only screen and (min-width: 770px) { .section-food-menu { height: 85vw; } }
 
 @media only screen and (min-width: 1180px) { .section-food-menu { height: 750px; } }
 
 @media only screen and (min-width: 1180px) { .paginated { display: none; } }
 
-.menu-page { margin: 0 40px; display: none; color: #222; }
+.menu-page { margin: 0 auto; max-width: 480px; padding: 0 30px; color: #222; }
 
 .menu-page h2, .menu-page h3, .menu-page h4 { display: inline-block; margin-bottom: 0; }
 
@@ -1765,23 +1764,31 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .menu-page strong { float: right; font-weight: bold; }
 
+@media only screen and (min-width: 770px) { .menu-page { max-width: none; display: none; } }
+
 @media only screen and (min-width: 1180px) { .menu-page { display: block; } }
 
 .section-food-menu.is-active, .paginated.is-active, .menu-page.is-active { display: block; }
+
+.page-nav { display: none; }
+
+@media only screen and (min-width: 770px) { .page-nav { display: block; } }
 
 .btn-next, .btn-prev { color: #988682; position: absolute; bottom: -4rem; font-size: 1.5rem; cursor: pointer; }
 
 .btn-next:hover, .btn-prev:hover { color: #4c0f11; }
 
-.btn-next { right: 1rem; }
+.btn-next { bottom: 45%; right: -6.5rem; }
 
-@media only screen and (min-width: 770px) { .btn-next { bottom: 45%; right: -6.5rem; } }
-
-.btn-prev { left: 1rem; }
-
-@media only screen and (min-width: 770px) { .btn-prev { left: auto; bottom: 35%; right: -6.5rem; } }
+.btn-prev { bottom: 35%; right: -6.5rem; }
 
 @media only screen and (min-width: 1180px) { .btn-prev { bottom: 45%; right: auto; left: -6.5rem; } }
+
+@media only screen and (max-width: 769px) { .menu-single { height: 0; overflow: hidden; }
+  .menu-single-title { margin-top: 40px; width: 100%; cursor: pointer; position: relative; }
+  .menu-single-title::after { content: "◁"; position: absolute; right: -20px; top: 0; }
+  .menu-single-title.is-active::after { content: "▽"; }
+  .menu-single-title.is-active + .menu-single { height: auto; } }
 
 .section-map { height: 400px; background: url("../images/g-map.jpg") center/cover; }
 
