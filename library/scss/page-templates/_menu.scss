@@ -90,6 +90,7 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   @include jr-size('tablet') {
     max-width: none;
     display: none;
+    padding: 30px;
 //    margin: 0 40px;
   }
   @include jr-size('screen-hd') {

@@ -1764,7 +1764,7 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .menu-page strong { float: right; font-weight: bold; }
 
-@media only screen and (min-width: 770px) { .menu-page { max-width: none; display: none; } }
+@media only screen and (min-width: 770px) { .menu-page { max-width: none; display: none; padding: 30px; } }
 
 @media only screen and (min-width: 1180px) { .menu-page { display: block; } }
 
