@@ -1784,7 +1784,9 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 @media only screen and (min-width: 1180px) { .btn-prev { bottom: 45%; right: auto; left: -6.5rem; } }
 
-@media only screen and (max-width: 769px) { .menu-single { height: 0; overflow: hidden; }
+.menu-single { margin-bottom: 5rem; }
+
+@media only screen and (max-width: 769px) { .menu-single { height: 0; overflow: hidden; margin-bottom: 0; }
   .menu-single-title { margin-top: 40px; width: 100%; cursor: pointer; position: relative; }
   .menu-single-title::after { content: "◁"; position: absolute; right: -20px; top: 0; }
   .menu-single-title.is-active::after { content: "▽"; }

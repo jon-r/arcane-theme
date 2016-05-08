@@ -139,10 +139,15 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   }
 }
 
+.menu-single {
+  margin-bottom: 5rem
+}
+
 @include jr-size('phoneOnly') {
   .menu-single {
     height: 0;
     overflow: hidden;
+    margin-bottom: 0;
   }
 
   .menu-single-title {
@@ -170,3 +175,4 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a {
   }
 
 }
+
