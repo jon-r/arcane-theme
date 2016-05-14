@@ -25,7 +25,7 @@
   background: $arc-yellow;
 }
 
-.hero.is-fullheight .tabs {
+.hero .tabs.is-centered {
   a {
     padding: 0;
   }
@@ -37,6 +37,20 @@
     padding: 0 20px
 
   }
+  @include jr-size('tablet') {
+    font-size: 18px;
+  }
+
+}
+
+.header-logo {
+    position: absolute;
+    left: 1rem;
+    top: 5px;
+    width: 60px;
+    @include jr-size('phoneOnly') {
+      opacity: 0.5;
+    }
 }
 
 //the pointer
