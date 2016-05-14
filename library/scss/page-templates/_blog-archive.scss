@@ -73,8 +73,14 @@
 
 .contact-content {
   padding: 1rem;
+
+  .subtitle {
+    margin-bottom: 0;
+    margin-top: 10px;
+  }
 }
 
 .contact-content:not(:last-of-type), .blog-frame .index-title {
   border-bottom: 1px solid;
 }
+

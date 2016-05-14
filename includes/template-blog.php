@@ -30,18 +30,25 @@
         </div>
 
 
-        <h5 class="title is-5">Subscribe to our newsletter</h5>
+        <h4 class="title is-4">Subscribe to our newsletter</h4>
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup" class="mail-subscription-form">
+          <form action="//arcanebar.us12.list-manage.com/subscribe/post?u=98339cb63bb7b0f18499a02eb&amp;id=c6f1f42a92" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
 
-        <form class="mail-subscription-form" >
+                <p class="control">
+                  <input type="email" value="" name="EMAIL" class="input is-medium" id="mce-EMAIL" placeholder="Your Email Address">
+                </p>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_98339cb63bb7b0f18499a02eb_c6f1f42a92" tabindex="-1" value=""></div>
+              <p class="control">
+                <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                </p>
+              </div>
+          </form>
+        </div>
 
-          <p class="control">
-            <input class="input is-medium" type="email" placeholder="Your Email Address">
-          </p>
-          <p class="control">
-            <button class="button" >Submit</button>
-          </p>
-
-        </form>
+        <!--End mc_embed_signup-->
 
       </section>
 
@@ -54,7 +61,7 @@
               2 South King Street
               <br /> Manchester
               <br /> M2 6EX
-              <br /> Tel: 0151 709 1133
+              <br /> Tel: 0161 834 6452
             </p>
           </article>
 

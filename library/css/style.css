@@ -1826,6 +1826,8 @@ li.tab-food-menu a:hover, li.tab-food-menu.is-active a { text-decoration: none; 
 
 .contact-content { padding: 1rem; }
 
+.contact-content .subtitle { margin-bottom: 0; margin-top: 10px; }
+
 .contact-content:not(:last-of-type), .blog-frame .index-title { border-bottom: 1px solid; }
 
 .footer { background: url(../images/paper_tile_yellow.jpg) center, #DDAB0F; text-align: center; padding: 1rem; height: 50px; }
