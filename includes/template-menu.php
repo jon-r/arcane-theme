@@ -36,8 +36,6 @@ $countA = $countB = 0;
       <div class="columns content" >
         <?php if( $menus->have_posts() ) : while ($menus->have_posts()) : $menus->the_post(); ?>
 
-
-
           <section class="column section-food-menu <?php echo ($countB == 0) ? 'is-active' : '' ?>">
             <article class="paginated is-active" >
               <div class="columns is-desktop">
@@ -73,7 +71,7 @@ $countA = $countB = 0;
             </div>
           </section>
 
-        <?php $countB++; endwhile; endif; ?>
+        <?php $countB++; endwhile; endif; wp_reset_query(); ?>
       </div>
     </div>
 

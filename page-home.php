@@ -10,11 +10,9 @@
 <div class="">
   <main id="main" class="inner-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-    <?php /* if (have_posts()) : while (have_posts()) : the_post();
+    <?php  if (have_posts()) : while (have_posts()) : the_post();
 
-      include(locate_template('includes/template-intro.php'));
-
-    endwhile; endif; */
+      //include(locate_template('includes/template-intro.php'));
 
     //menu tabs
     include(locate_template('includes/template-menu.php'));
@@ -23,9 +21,7 @@
     //blog section
     include(locate_template('includes/template-blog.php'));
 
-
-
-    ?>
+    endwhile; endif; ?>
 
 
   </main>

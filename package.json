@@ -1,6 +1,6 @@
 {
   "name": "arcane-theme",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "wp bones theme, modified for gulp",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,12 @@
   "dependencies": {},
   "devDependencies": {
     "bulma": "0.0.16",
-    "gulp-cssnano": "^2.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
     "gulp-zip": "^3.2.0"
   },
   "repository": {

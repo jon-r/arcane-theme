@@ -17,6 +17,24 @@
   margin: 2rem
 }
 
+.contact-frame {
+
+  padding: 1rem 0;
+
+  h2,h3,h4,h5,h6 {
+
+    color: $arc-red;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+  hr {
+    border-top-color: $arc-red;
+    margin: 1rem 0;
+  }
+}
+
 .mail-subscription-form  {
   .control {
     text-align: center;

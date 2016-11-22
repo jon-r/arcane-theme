@@ -21,11 +21,7 @@
 
           <?php include(locate_template('includes/template-post.php')); ?>
 
-        <?php endwhile; else: ?>
-
-        Oops, there are no posts.
-
-        <?php endif; ?>
+        <?php endwhile; endif; wp_reset_query(); ?>
 
         </div>
 
@@ -53,46 +49,9 @@
       </section>
 
       <section class="column">
-        <div class="contact-frame">
+        <div class="contact-frame content">
+        <?php the_field('contact_details'); ?>
 
-          <article class="contact-content">
-            <h4 class="title is-4">Arcane</h4>
-            <p>
-              2 South King Street
-              <br /> Manchester
-              <br /> M2 6EX
-              <br /> Tel: 0161 834 6452
-            </p>
-          </article>
-
-          <article class="contact-content">
-            <h4 class="title is-4">Email</h4>
-            <a href="#">info@arcanebar.com</a><br />
-            <a href="#">bookings@arcanebar.com</a>
-          </article>
-
-          <article class="contact-content">
-            <h4 class="title is-4">Twitter</h4>
-            <a href="#">@ArcaneBar</a>
-          </article>
-
-          <article class="contact-content">
-            <h4 class="title is-4">Instagram</h4>
-            <a href="#">@ArcaneBar</a>
-          </article>
-
-          <article class="contact-content">
-            <h4 class="title is-4">Facebook</h4>
-            <a href="#">ArcaneBar</a>
-          </article>
-
-          <article class="contact-content">
-            <h4 class="title is-4">OPENING TIMES</h4>
-            <h6 class="subtitle is-6">Sunday to Thursday</h6>
-            <span>11.00am - 1.00am</span>
-            <h6 class="subtitle is-6">Friday &amp; Saturday</h6>
-            <span>11.00am - 4.00am</span>
-          </article>
         </div>
 
       </section>

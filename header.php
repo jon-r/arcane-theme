@@ -25,9 +25,12 @@
       <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
   <![endif]-->
   <?php // or, set /favicon.ico for IE10 win ?>
-  <meta name="msapplication-TileColor" content="#f01d4f">
+  <meta name="msapplication-TileColor" content="#4c0f11">
   <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-      <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#4c0f11">
+
+  <meta name="description" content="Independant cocktail bar & drinking den. Madness & filigree. South King St, Manchester" >
+  <meta name="author" content="Jon Richards" >
 
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
